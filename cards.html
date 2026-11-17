@@ -1660,7 +1660,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       </div>
       <div class="sub-body"><div class="sub-inner">
         <div class="search-row"><input id="uSearch" type="search" placeholder="단위 검색">
-          <select id="uSort"><option value="plan">수강일순</option><option value="due">복습 많은 순</option><option value="new">신규 많은 순</option><option value="last">오래 안 푼 순</option></select></div>
+          <select id="uSort"><option value="plan">수강일순</option><option value="due">복습 많은 순</option><option value="new">새 카드 많은 순</option><option value="last">오래 안 푼 순</option></select></div>
         <div id="unitList"></div>
         <div class="bulkbar" id="uBar">
           <span class="n" id="uN">0단위</span>
@@ -1683,7 +1683,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
           <button id="btnOpHelp" title="검색 연산자">연산자 ⓘ</button>
         </div>
         <div class="op-help" id="opHelp">
-          <code>is:due</code> 복습 예정 · <code>is:new</code> 신규 · <code>is:weak</code> 약점 ·
+          <code>is:due</code> 복습 예정 · <code>is:new</code> 새 카드 · <code>is:weak</code> 약점 ·
           <code>is:leech</code> 자꾸 틀림 · <code>is:flag</code> 플래그 · <code>is:ann</code> @주석 ·
           <code>is:buried</code> 미룸 · <code>is:off</code> 끈 카드<br>
           <code>tag:"기초 문식성"</code> 태그(공백은 따옴표) · <code>typ:정의</code> 유형 · <code>subj:국어</code> 과목 ·
@@ -1761,7 +1761,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
             <table class="hp-t">
               <tr><td>세션 만들기</td><td>홈 「세션」 ＋ → 범위 고르기(과목 › 대주제 › 중주제) → 만들기</td></tr>
               <tr><td>범위 넓히기</td><td>세션 화면 · 들은 강의 자리를 더 넣기</td></tr>
-              <tr><td>신규 하루 최대</td><td>세션 고치기(연필) → 하루에 나오는 새 카드 상한</td></tr>
+              <tr><td>새 카드 하루 최대</td><td>세션 고치기(연필) → 하루에 나오는 새 카드 상한</td></tr>
             </table>
           </div>
         </details>
@@ -1929,7 +1929,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <button data-th="dark">다크</button>
     </div>
   </div>
-  <div class="field" style="display:none"><label>하루 신규 권장량</label>
+  <div class="field" style="display:none"><label>하루 새 카드 권장량</label>
     <input id="intakeCap" type="number" inputmode="numeric" min="0" placeholder="130"></div>
   <div class="field"><label>복습 강도</label>
     <div class="rng-row"><span class="rng-v" id="retVal">90%</span><span class="desc" id="retLoad"></span></div>
@@ -6248,7 +6248,7 @@ function addScopeToSess(sx, sel){
 }
 let lastAddHeld=0, lastAddOff=0;
 function stWord(v){
-  const m={due:'복습일 된 것', new:'신규', weak:'약점', all:'전부'};
+  const m={due:'복습일 된 것', new:'새 카드', weak:'약점', all:'전부'};
   return stArr(v).map(k=>m[k]||k).join('·');
 }
 function addToast(n, sx){
@@ -6777,7 +6777,7 @@ function pgBump(sx, d){ const tk=todayKey(); if(!sx.pg||sx.pg.day!==tk) sx.pg={d
 function counts(){
   const rest=dropSettled(queue.slice(qPos));
   let nw=0; for(const c of rest) if(isNew(c)) nw++;
-  const label = nw===rest.length ? '신규' : (nw===0 ? '복습' : '남음');
+  const label = nw===rest.length ? '새 카드' : (nw===0 ? '복습' : '남음');
   const tot=queue.length, done=Math.max(0,tot-rest.length);
   let bd=done, bt=tot;
   if(curSess){ const n=(curSess.pg&&curSess.pg.day===todayKey())?(curSess.pg.n||0):0; bd=n; bt=n+newCap(curSess, rest.filter(c=>!c._re)).length; }
@@ -7587,7 +7587,7 @@ function renderToday(){
   const bars=wk.map((v,i)=>`<i class="${i===6?'on':''}" style="height:${Math.max(2,Math.round(v/mx*100))}%" title="${v}회"></i>`).join('');
   const revDone=Math.max(0,(t.cards||0)-(t.nw||0)), dueAll=revDone+due;
   const lead = t.n
-    ? `<div class="big-num"><b>${t.n.toLocaleString()}</b><small>회 채점 · ${t.cards.toLocaleString()}장 (신규 ${t.nw.toLocaleString()}) · ${fmtMin(t.ms)}</small></div>`
+    ? `<div class="big-num"><b>${t.n.toLocaleString()}</b><small>회 채점 · ${t.cards.toLocaleString()}장 (새 카드 ${t.nw.toLocaleString()}) · ${fmtMin(t.ms)}</small></div>`
     : `<div class="big-num"><b>0</b><small>회 — 아래 세션을 눌러 시작</small></div>`;
   $('todayBox').innerHTML=`
     <div class="today-top">
@@ -7684,7 +7684,7 @@ function renderHomeHead(due, restToday){
   const parts=[];
   if(dd>=0) parts.push(`시험까지 ${dd}일`);
   { const t=(dailyStats()[todayKey()]||emptyDay()), tm=todayElapsedMs();
-    parts.push(...(tm>=60000 ? [`오늘 ${fmtHM(tm)}`, `신규 ${(t.nw||0).toLocaleString()}`] : [`오늘 신규 ${(t.nw||0).toLocaleString()}`]), `남은 ${Math.max(0,live-learned).toLocaleString()} (본 카드 ${live&&learned&&learned*100<live*0.5?'1% 미만':(live?Math.round(learned/live*100):0)+'%'})`); }
+    parts.push(...(tm>=60000 ? [`오늘 ${fmtHM(tm)}`, `새 카드 ${(t.nw||0).toLocaleString()}`] : [`오늘 새 카드 ${(t.nw||0).toLocaleString()}`]), `남은 ${Math.max(0,live-learned).toLocaleString()} (본 카드 ${live&&learned&&learned*100<live*0.5?'1% 미만':(live?Math.round(learned/live*100):0)+'%'})`); }
   if(restToday) parts.push('오늘은 쉬는 날');
   $('hSub').innerHTML=parts.map(x=>'<span style="white-space:nowrap">'+esc(x)+'</span>').join(' · ');
   $('hDday').textContent = dd>0?`D-${dd}`:dd===0?'D-day':''; $('hDday').style.display=dd>=0?'':'none';
@@ -7719,7 +7719,7 @@ function renderHero(due){
     box.innerHTML=`<section class="hero done"><span class="hero-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
       <div class="hero-b"><span class="hero-t">오늘 할 일 다 함</span><span class="hero-s">내일 ${tomorrowCount(null).toLocaleString()}장</span></div></section>`;
     renderNotes(); return; }
-  const remain=sessRemain(sx), st=stArr(sx.how.status).map(k=>({due:'복습',new:'신규',all:'전체',weak:'약점'}[k]||k)).join('+');
+  const remain=sessRemain(sx), st=stArr(sx.how.status).map(k=>({due:'복습',new:'새 카드',all:'전체',weak:'약점'}[k]||k)).join('+');
   box.innerHTML=`<section class="hero"><div class="hero-b"><span class="hero-k">이어서 풀기</span><span class="hero-t">${esc(sx.name)}</span>
       <span class="hero-s">${esc(st)} ${remain.toLocaleString()}장${sx.lastAt?` · 마지막 ${esc(fmtAgo(sx.lastAt))}`:''}</span></div>
     <button class="hero-go" id="heroGo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.8v14.4a1 1 0 0 0 1.5.86l11.6-7.2a1 1 0 0 0 0-1.72L8.5 3.94A1 1 0 0 0 7 4.8z"/></svg>시작</button></section>`;
@@ -7795,7 +7795,7 @@ function scoreHtml(sc){
   const pc=v=>Math.round(v/sc.n*100), hit=Math.round((sc.n-sc.r[1])/sc.n*100);
   return `<div class="score" style="margin:0 0 14px">
     <div class="sc-top"><b>${+sc.n||0}</b><small>회</small>
-      <span class="sc-hit" title="이 회차에 「다시」를 안 누른 비율 — 신규 첫 대면도 포함합니다(통계의 「복습 유지율」은 신규를 뺀 수라 숫자가 다릅니다)">회차 정답률 ${hit}%</span>
+      <span class="sc-hit" title="이 회차에 「다시」를 안 누른 비율 — 새 카드 첫 대면도 포함합니다(통계의 「복습 유지율」은 새 카드를 뺀 수라 숫자가 다릅니다)">회차 정답률 ${hit}%</span>
       <span class="sc-t">${fmtMin(sc.ms)}${sc.ms?` · 평균 ${fmtDur(Math.round(sc.ms/sc.n))}`:''}</span></div>
     <div class="sbar" style="margin-top:10px">
       <i style="width:${pc(sc.r[1])}%;background:var(--again)"></i><i style="width:${pc(sc.r[2])}%;background:var(--hard)"></i>
@@ -7863,7 +7863,7 @@ function unitRow(k, st2, opts){
   el.innerHTML=`${exp?`<button class="cv${opts.expanded?' open':''}">▸</button>`:''}`
     + `<div class="t">${up?`<div class="up">${esc(up)}</div>`:''}<div class="nm">${esc(rowName(k))}</div>
     <div class="mt">${inQ?`<span class="inq">이 세션 ${inQ}</span>`:''}<span>총 ${st2.n}</span>${st2.due?`<span class="due">복습 ${st2.due.toLocaleString()}</span>`:''}
-      ${st2.nw?`<span class="nw">신규 ${st2.nw}</span>`:'<span>다 넣음</span>'}
+      ${st2.nw?`<span class="nw">새 카드 ${st2.nw}</span>`:'<span>다 넣음</span>'}
       <span>${st2.last?'인출 '+fmtAgo(st2.last):'인출 없음'}</span>
       ${uri?`<a class="hd" href="${uri.replace(/&/g,'&amp;')}" target="_blank" rel="noopener">정리 노트 ↗</a>`:''}</div></div>
     <button class="rd${read?' on':''}">${read?'읽음 ✓':'읽음 표시'}</button>
@@ -7901,7 +7901,7 @@ function renderSession(){
         const cs=refillQ.map(id=>BYID[id]).filter(Boolean), st=stArr(sx.how.status);
         const p=[], has=k=>st.includes('all')||st.includes(k);
         if(has('due')){ const n2=cs.filter(c=>isDue(c)).length; if(n2)p.push(`복습 ${n2}`); }
-        if(has('new')){ const n2=cs.filter(c=>isNew(c)).length; if(n2)p.push(`신규 ${n2}`); }
+        if(has('new')){ const n2=cs.filter(c=>isNew(c)).length; if(n2)p.push(`새 카드 ${n2}`); }
         if(st.includes('weak')){ const n2=cs.filter(c=>isWeak(c)).length; if(n2)p.push(`약점 ${n2}`); }
         return p.length?` · ${p.join(' · ')}`:'';})():'';
   const IC=(p,col)=>`<span class="gr-ic" style="background:${col}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg></span>`;
@@ -8150,7 +8150,7 @@ function renderUnits(){
     const sel=ks.filter(k=>uPicked.has(k)).length;
     const h=document.createElement('div'); h.className='u-grp'+(open?' open':'');
     h.innerHTML=`<span class="cv">▸</span><span class="nm">${esc(sj.split('.')[1]||sj)}</span>
-      <span class="mt">${ks.length}단위${due?` · <b>복습 ${due}</b>`:''}${nw?` · 신규 ${nw}`:''}${sel?` · <i>선택 ${sel}</i>`:''}</span>`;
+      <span class="mt">${ks.length}단위${due?` · <b>복습 ${due}</b>`:''}${nw?` · 새 카드 ${nw}`:''}${sel?` · <i>선택 ${sel}</i>`:''}</span>`;
     h.onclick=()=>{ uOpen.has(sj)?uOpen.delete(sj):uOpen.add(sj); saveUOpen(); renderUnits(); };
     box.appendChild(h);
     if(!open) continue;
@@ -8995,7 +8995,7 @@ function openSessEditor(sx, seed){
 function syncSessEditor(){
   const h=nsState.how;
   const sb=$('nsStatus'); sb.innerHTML='';
-  for(const [k,label] of [['due','due'],['new','신규'],['weak','약점'],['all','전체']]){
+  for(const [k,label] of [['due','due'],['new','새 카드'],['weak','약점'],['all','전체']]){
     const on=stHas(h.status,k);
     const b=document.createElement('button'); b.className='chip'+(on?' on':''); b.textContent=label;
     b.onclick=()=>{
@@ -9189,7 +9189,7 @@ function renderCardSheet(){
   const facts=[];
   facts.push(`<span class="f">${esc(c.typ)}</span>`);
   if(isRev(c)) facts.push('<span class="f">역방향 (쌍의 파생)</span>');
-  if(!f) facts.push('<span class="f">신규</span>');
+  if(!f) facts.push('<span class="f">새 카드</span>');
   else{
     facts.push(`<span class="f">복습 <b>${f.reps}</b>회</span>`);
     facts.push(`<span class="f">S <b>${f.stability.toFixed(1)}</b>일</span>`);
@@ -9274,8 +9274,8 @@ function renderCardSheet(){
     if(setDueDays(c,n)){ toast(n===0?'오늘로 옮김':`${n}일 뒤로 옮김`); rr(); }
     else toast('아직 안 푼 카드 — 옮길 일정 없음'); };
   $('csForget').onclick=()=>askConfirm('처음부터 다시',
-    'FSRS 상태(안정도·난이도·다음 일정)를 지우고 신규 카드로 되돌립니다. 풀이 이력과 틀림 횟수는 남습니다. 되돌릴 수 없습니다.',
-    '초기화', ()=>{ forgetCard(c); toast('신규로 되돌림'); rr(); });
+    'FSRS 상태(안정도·난이도·다음 일정)를 지우고 새 카드로 되돌립니다. 풀이 이력과 틀림 횟수는 남습니다. 되돌릴 수 없습니다.',
+    '초기화', ()=>{ forgetCard(c); toast('새 카드로 되돌림'); rr(); });
   $('csClose').onclick=closeCardSheet;
 }
 $('ovlCard').onclick=(e)=>{ if(e.target===$('ovlCard'))closeCardSheet(); };
@@ -9322,7 +9322,7 @@ function renderListHome(){
     return `<button class="lh-tile${n?'':' zero'}" data-k="${esc(k)}"${n?'':' disabled'}><span class="lh-ic" style="background:${ic[0]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic[1]}</svg></span><span class="l">${esc(x.n)}</span><span class="n">${n.toLocaleString()}</span></button>`; };
   let h=`<div class="lh-grid lh-main">${['due','leech','forgot','retired'].map(tile).join('')}</div>`
        +`<div class="lh-grid">${['flag','ann','today','buried'].map(tile).join('')}</div>`;
-  h+=`<button class="gr-row lh-units" id="lhUnits"><span class="gr-ic" style="background:var(--c-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span><span class="gr-b"><span class="gr-t">단위로 보기</span><span class="gr-s">과목 → 단위 · 복습 · 신규 · 세션에 넣기</span></span><svg class="s2-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg></button>`;
+  h+=`<button class="gr-row lh-units" id="lhUnits"><span class="gr-ic" style="background:var(--c-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span><span class="gr-b"><span class="gr-t">단위로 보기</span><span class="gr-s">과목 → 단위 · 복습 · 새 카드 · 세션에 넣기</span></span><svg class="s2-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg></button>`;
   const box=$('listHome'); box.innerHTML=h;
   box.querySelectorAll('.lh-tile').forEach(b=>b.onclick=()=>{
     listCond=b.dataset.k;
@@ -9360,7 +9360,7 @@ function cardRow(c, extraMeta){
   const r=s&&s.fsrs?retrievability(s.fsrs):null;
   el.innerHTML=`<div class="lf">${esc(c.front)}</div><div class="lb">→ ${esc(c.back)}</div>
     <div class="lmeta"><span class="m">${esc(c.typ)}</span>${isRev(c)?'<span class="m">역방향</span>':''}
-    ${s&&s.fsrs?`<span class="m">S ${s.fsrs.stability.toFixed(1)}일</span><span class="m">R ${r!=null?Math.round(r*100)+'%':'—'}</span>`:'<span class="m">신규</span>'}
+    ${s&&s.fsrs?`<span class="m">S ${s.fsrs.stability.toFixed(1)}일</span><span class="m">R ${r!=null?Math.round(r*100)+'%':'—'}</span>`:'<span class="m">새 카드</span>'}
     ${s&&s.miss?`<span class="m warn">틀림 ${s.miss}</span>`:''}
     ${isLeech(c)?'<span class="m warn">⚠ 자꾸 틀림</span>':''}
     ${buried(c)?'<span class="m">내일로 뺌</span>':''}
@@ -9989,7 +9989,7 @@ function hmLine(k, by, hard){
   const tk=todayKey(), W='일월화수목금토'[new Date(k+'T12:00:00').getDay()], d=`${Number(k.slice(5,7))}월 ${Number(k.slice(8))}일 (${W})`;
   if(k>tk){ if(!EXAM_DAY) return d; const n=Math.round((new Date(EXAM_DAY+'T12:00:00')-new Date(k+'T12:00:00'))/86400000); return `${d} · ${k===EXAM_DAY?'시험날':n>0?'시험 '+n+'일 전':''}`; }
   const e=by[k]; if(!e||!e.cards) return `${d} · ${isRestDay(k)?'쉬는 날':'안 풂'}`;
-  return `${d} · <b>${e.cards.toLocaleString()}장</b> · 신규 ${e.nw.toLocaleString()} · 복습 ${Math.max(0,e.cards-e.nw).toLocaleString()} · ${fmtMin(e.ms)}${hard&&hard[k]!=null?' · 새로 굳음 +'+hard[k]:''}`; }
+  return `${d} · <b>${e.cards.toLocaleString()}장</b> · 새 카드 ${e.nw.toLocaleString()} · 복습 ${Math.max(0,e.cards-e.nw).toLocaleString()} · ${fmtMin(e.ms)}${hard&&hard[k]!=null?' · 새로 굳음 +'+hard[k]:''}`; }
 const K_MOCK='cards_mock_v1';
 function mockClean(d){ if(!d||!Array.isArray(d.rounds)) return null;
   const pair=v=>v==null || (Array.isArray(v) && v.length===2 && isFinite(v[0]) && isFinite(v[1]) && typeof v[0]==='number' && typeof v[1]==='number');
@@ -10141,10 +10141,10 @@ function renderStats(){
       +' · 시험날 떠올릴 수 있는 것 약 <b>'+T.K.toLocaleString()+'장</b></div>'
       +trajChart(T.hist, T.pred, T.zero)
       +'<div class="cap" style="margin-top:6px">굳음(21일 이상) · 무름 · 안 나옴 순으로 쌓음 · '
-      +'점선 = 예측 · 옅은 점선 = 오늘부터 신규를 안 넣으면('+((T.zeroEnd&&T.zeroEnd.hard)||0).toLocaleString()+'장)</div>'
-      +'<div class="cap" style="margin-top:4px;color:var(--mute)">최근 7일 기준 — 신규 '+T.inp.newPerDay+'/일 · 처리 '+T.inp.cap+'/일'
+      +'점선 = 예측 · 옅은 점선 = 오늘부터 새 카드를 안 넣으면('+((T.zeroEnd&&T.zeroEnd.hard)||0).toLocaleString()+'장)</div>'
+      +'<div class="cap" style="margin-top:4px;color:var(--mute)">최근 7일 기준 — 새 카드 '+T.inp.newPerDay+'/일 · 처리 '+T.inp.cap+'/일'
       +' · 유지율 '+Math.round(T.inp.pFirst*100)+'/'+Math.round(T.inp.pRev*100)+'%'
-      +(T.doneKey?' · 신규 소진 '+T.doneKey.slice(5).replace('-','/'):'')+'</div>';
+      +(T.doneKey?' · 새 카드 소진 '+T.doneKey.slice(5).replace('-','/'):'')+'</div>';
     recordForecast(T);
     const FC=forecastCheck();
     if(FC) h+='<div class="cap" style="margin-top:4px;color:var(--mute)">지난주 예측 오차 '
@@ -10155,11 +10155,11 @@ function renderStats(){
 
   h+='<div class="card-box"><h3>오늘</h3>';
   if(!T){
-    h+='<div class="cap">'+today.cards+'장 — 신규 '+today.nw+' · 복습 '+Math.max(0,today.cards-today.nw)+' · '+fmtMin(today.ms)+'</div>';
+    h+='<div class="cap">'+today.cards+'장 — 새 카드 '+today.nw+' · 복습 '+Math.max(0,today.cards-today.nw)+' · '+fmtMin(today.ms)+'</div>';
   } else {
     const G=todayGains(T.hist);
     h+='<div class="cap">새로 굳은 <b>'+(G.newHard>=0?'+':'')+G.newHard+'</b> · 자꾸 틀림 벗어남 <b>'+G.escaped+'</b>'
-      +' · '+today.cards+'장 — 신규 '+today.nw+' · 복습 '+Math.max(0,today.cards-today.nw)+' · '+fmtMin(today.ms)+'</div>';
+      +' · '+today.cards+'장 — 새 카드 '+today.nw+' · 복습 '+Math.max(0,today.cards-today.nw)+' · '+fmtMin(today.ms)+'</div>';
   }
   h+=heatmapHtml(by, T);
   h+='</div>';
@@ -10201,7 +10201,7 @@ function renderStats(){
   const acols=[];
   for(let i=27;i>=0;i--){ const k=dayKeyOffset(-i); const e=by[k]||emptyDay();
     acols.push({a:Math.max(0,e.n-e.nw), b:e.nw, cls:i===0?'today':(isRestDay(k)?'rest':''),
-      label:(i%7===0)?k.slice(5).replace('-','/'):'', title:k+' · 복습 '+Math.max(0,e.n-e.nw)+' · 신규 '+e.nw}); }
+      label:(i%7===0)?k.slice(5).replace('-','/'):'', title:k+' · 복습 '+Math.max(0,e.n-e.nw)+' · 새 카드 '+e.nw}); }
   const tot28=acols.reduce((a,c)=>a+c.a+c.b,0), act=acols.filter(c=>c.a+c.b>0).length;
   adv+='<div class="cap" style="margin-top:8px"><b>최근 4주 풀이량</b> — 총 '+tot28.toLocaleString()+'회 · 푼 날 '+act+'일 · 하루 평균 '+(act?Math.round(tot28/act):0)+'회</div>'+barChart(acols,{h:90});
   const seen=new Set(); const R=[0,0,0,0,0]; let msSum=0,msN=0;
