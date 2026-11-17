@@ -1,0 +1,31 @@
+/* 소개·처리방침 페이지 공통 — 앱 토큰(design/tokens.css)만 씀 · 디자인_언어 §2·§4·§5 값 */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-bg);color:var(--c-label);font-family:var(--font);font-size:var(--t-body);line-height:1.6;
+  word-break:keep-all;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;
+  padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(40px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+main{max-width:720px;margin:0 auto}
+.top{display:flex;align-items:center;gap:8px;min-height:44px;margin-bottom:8px}
+.back{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:22px;background:var(--c-card);color:var(--c-acc);text-decoration:none}
+.back svg{width:22px;height:22px}
+h1{font-size:var(--t-large);line-height:var(--t-large-lh);font-weight:700;letter-spacing:-.025em;margin:4px 4px 6px}
+.meta{font-size:var(--t-foot);color:var(--c-sec);margin:0 4px 18px}
+h2{font-size:var(--t-foot);line-height:var(--t-foot-lh);font-weight:600;color:var(--c-sec);margin:26px 18px 6px}
+.grp{background:var(--c-card);border-radius:var(--r-group,22px);padding:6px 18px}
+.grp>p,.grp>ul,.grp>table,.grp>dl{margin:10px 0}
+.grp ul{padding-left:1.2em}
+.grp li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:var(--t-sub);line-height:var(--t-sub-lh)}
+th,td{text-align:left;vertical-align:top;padding:9px 6px;border-bottom:.5px solid var(--c-sep)}
+tr:last-child th,tr:last-child td{border-bottom:0}
+th{font-weight:600;white-space:nowrap;width:30%}
+a{color:var(--c-acc)}
+.row{display:flex;align-items:center;justify-content:space-between;min-height:52px;color:var(--c-label);text-decoration:none;border-bottom:.5px solid var(--c-sep)}
+.row:last-child{border-bottom:0}
+.row svg{width:8px;height:14px;color:var(--c-chev);flex:none;margin-left:10px}
+.news{list-style:none;padding:0!important}
+.news li{display:flex;gap:10px;padding:8px 0;border-bottom:.5px solid var(--c-sep);margin:0!important}
+.news li:last-child{border-bottom:0}
+.news time{color:var(--c-sec);font-size:var(--t-sub);white-space:nowrap;min-width:3.6em}
+.tag{font-size:var(--t-cap);font-weight:600;border-radius:999px;padding:2px 8px;background:var(--c-fill);color:var(--c-sec);white-space:nowrap;align-self:flex-start;margin-top:3px}
+.badge{display:inline-block;font-size:var(--t-cap);font-weight:600;border-radius:999px;padding:3px 10px;background:var(--c-acc-tint);color:var(--c-acc);vertical-align:middle;margin-left:6px;letter-spacing:0}
