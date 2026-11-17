@@ -1239,7 +1239,7 @@ details.hp[open]>summary{border-bottom:1px solid var(--line);}
   .hp-views{display:block;}
   .hp-list{background:var(--c-card);border-radius:var(--r-group);box-shadow:var(--sh-card);padding:4px;}
   #scrHome .home-inner{padding-bottom:calc(62px + 24px);}
-  #tabBar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:var(--sp-m);right:var(--sp-m);bottom:calc(8px + env(safe-area-inset-bottom));height:62px;border-radius:31px;padding:4px;z-index:20;
+  #tabBar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:var(--sp-m);right:var(--sp-m);bottom:calc(8px + env(safe-area-inset-bottom));height:62px;border-radius:31px;padding:4px;z-index:20;
     background:var(--c-glass);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);box-shadow:0 0 0 .5px var(--c-glass-ring),0 8px 28px var(--c-glass-shadow);}
   .tab{height:54px;border-radius:27px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--c-label);font-size:10.5px;font-weight:600;}
   .tab svg{width:22px;height:22px;}
@@ -1383,6 +1383,8 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 .sheet h2{font-family:var(--font);font-size:22px;font-weight:700;letter-spacing:-.015em;}
 .sheet .desc{font-size:13px;color:var(--c-sec);}
 .sheet .btn-row button{border-radius:999px;min-height:50px;font-size:17px;font-weight:600;}
+#mockBody .btn-row{display:flex;gap:8px;margin:14px 0 4px;}
+#mockBody .btn-row button{flex:1;padding:13px;border-radius:999px;min-height:50px;font-size:17px;font-weight:600;}
 .btn-primary{background:var(--c-acc-fill);color:#fff;}
 .btn-ghost{border:0;background:var(--c-fill);color:var(--c-label);}
 #ovlSettings .field{background:var(--c-card);border-radius:var(--r-group);box-shadow:var(--sh-card);padding:14px 20px 16px;margin-bottom:16px;}
@@ -1558,6 +1560,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <button class="hs-row" id="ctOpen" title="음악·미술·체육 2022 내용 체계표 — 가리고 쓰기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M9.5 4.5v15"/></svg>내용 체계표</button>
       <button class="hs-row" data-go="scrList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>라이브러리</button>
       <button class="hs-row" data-go="scrStats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-6"/></svg>통계</button>
+      <button class="hs-row" data-go="scrMock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M5 15l4-5 4 3 6-7"/></svg>모의고사</button>
     </nav>
     <div class="hs-bottom"><button class="hs-row" id="btnSettings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>설정</button><div class="h-foot" id="hFoot"></div></div>
   </aside>
@@ -1636,6 +1639,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
         <button class="tab on" id="tabToday"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>오늘</span></button>
         <button class="tab" id="tabHd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg><span>정리 노트</span></button>
         <button class="tab" data-go="scrList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>라이브러리</span></button>
+        <button class="tab" data-go="scrMock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M5 15l4-5 4 3 6-7"/></svg><span>모의고사</span></button>
       </nav>
     </div>
 
@@ -1710,6 +1714,10 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <div class="sub-head"><button class="tb-btn" data-go="scrHome" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="sub-title">통계</div></div>
       <div class="sub-body"><div class="sub-inner" id="statsBody"></div></div>
     </div>
+    <div class="scr" id="scrMock">
+      <div class="sub-head"><button class="tb-btn" data-go="scrHome" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="sub-title">모의고사</div></div>
+      <div class="sub-body"><div class="sub-inner" id="mockBody"></div></div>
+    </div>
 
 
     <div id="ovlImg"></div>
@@ -1744,11 +1752,10 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <div class="sub-head"><button class="tb-btn" data-go="scrHome" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="sub-title">도움말</div></div>
       <div class="sub-body"><div class="sub-inner">
 
-        <div class="hp-toc" id="hpToc"></div>
 
         <div class="hp-lead">카드 <span class="hp-n-cards">…</span>장 · 복습일은 채점 기록으로 날마다 다시 계산.</div>
 
-        <details class="hp" id="hp1" open><summary>시작 — 새 카드 넣기</summary>
+        <details class="hp" id="hp1" open><summary>시작</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>세션 만들기</td><td>홈 「세션」 ＋ → 범위 고르기(과목 › 대주제 › 중주제) → 만들기</td></tr>
@@ -1758,7 +1765,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
           </div>
         </details>
 
-        <details class="hp" id="hp2"><summary>매일 — 세션</summary>
+        <details class="hp" id="hp2"><summary>세션</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>자동 충전</td><td>날마다 그 세션 범위의 복습일 된 카드와 새 카드로 스스로 채움</td></tr>
@@ -1769,7 +1776,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
           </div>
         </details>
 
-        <details class="hp" id="hp3"><summary>채점 — 복습일이 정해지는 길</summary>
+        <details class="hp" id="hp3"><summary>채점</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>다시</td><td>못 떠올림 → 곧 다시</td></tr>
@@ -1784,7 +1791,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
           </div>
         </details>
 
-        <details class="hp" id="hp4"><summary>카드 — 끄기 · 플래그 · 오류 제보</summary>
+        <details class="hp" id="hp4"><summary>카드</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>끄기</td><td>다시 안 나옴 · 라이브러리 「끈 카드」에서 다시 켬</td></tr>
@@ -1795,16 +1802,16 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
           </div>
         </details>
 
-        <details class="hp" id="hp5"><summary>시험 — 시험일 · 모의고사</summary>
+        <details class="hp" id="hp5"><summary>시험</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>시험일</td><td>설정 「시험」 · 넣으면 D-day · 시험날 기억 목표 · 통계 「시험까지의 궤적」</td></tr>
-              <tr><td>모의고사 점수</td><td>설정 「시험」 → 회차 추가 · 통계에 추이</td></tr>
+              <tr><td>모의고사 점수</td><td>「모의고사」 탭(아이패드는 사이드바) → 기록 추가 · 통계에도 추이</td></tr>
             </table>
           </div>
         </details>
 
-        <details class="hp" id="hp6"><summary>저장 — 로그인 · 백업</summary>
+        <details class="hp" id="hp6"><summary>저장</summary>
           <div class="hpb">
             <table class="hp-t">
               <tr><td>로그인 없음</td><td>이 기기에만 저장</td></tr>
@@ -1882,7 +1889,6 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 
 <div class="ovl" id="ovlSess"><div class="sheet wide">
   <h2 id="nsTitle">새 세션</h2>
-  <p class="desc">방식(어떻게)을 고름 — 범위(무엇을)는 만든 뒤 고름. 방식 틀을 누르면 아래가 채워짐.</p>
   <div class="field"><label>이름</label><input id="nsName" type="text" maxlength="24" placeholder="예: 국어"></div>
   <div class="field"><label>방식</label><div class="mini-chips" id="nsTpl"></div>
     <div class="desc" id="nsTplDesc" style="margin:6px 2px 0"></div></div>
@@ -1923,7 +1929,6 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <button data-th="paper">페이퍼</button>
       <button data-th="dark">다크</button>
     </div>
-    <div class="set-row" id="lightRow"><span>자동일 때 밝은 테마</span><div class="seg" id="lightSeg"><button data-lt="paper">페이퍼</button><button data-lt="white">화이트</button></div></div>
   </div>
   <div class="field" style="display:none"><label>하루 신규 권장량</label>
     <input id="intakeCap" type="number" inputmode="numeric" min="0" placeholder="130"></div>
@@ -1938,9 +1943,11 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
     <div class="rng-ends"><span>넓게 85%</span><span>촘촘히 98%</span></div>
     <button class="act-btn" id="focusPick" style="margin-top:10px"><span>집중 암기 카드 고르기</span><small id="focusPickSub"></small></button>
   </div>
-  <div class="field"><label>시험</label>
-    <div class="set-row"><span>시험일</span><span class="set-date-w"><input id="examDate" class="set-date" type="date" aria-label="시험일"><button class="set-x" id="examClear" aria-label="시험일 지움"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></span></div>
-    <button class="act-btn" id="mockOpen" style="margin-top:8px"><span>모의고사 점수</span><small id="mockOpenSub"></small></button>
+  <div class="field"><label>시험일</label>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <input id="examDate" type="date" aria-label="시험일" style="flex:1 1 150px;min-width:0">
+      <button class="btn-ghost" id="examClear" style="flex:0 0 auto">지움</button>
+    </div>
   </div>
   <div class="field" id="xretField" style="display:none"><label>시험날 기억 목표</label>
     <div class="rng-row"><span class="rng-v" id="xretVal">95%</span><span class="desc" id="xretLoad"></span></div>
@@ -2004,7 +2011,6 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 
 <div class="ovl" id="ovlCard"><div class="sheet wide" id="csSheet"></div></div>
 <div class="ovl" id="ovlEnd"><div class="sheet end-sheet" id="endBody"></div></div>
-<div class="ovl" id="ovlMock"><div class="sheet" id="mkBody"></div></div>
 
 <div id="toast"></div>
 
@@ -5410,7 +5416,7 @@ async function push(force){
       resyncQueues(); cacheState();
       const scr=[...document.querySelectorAll('.scr.on')].map(x=>x.id)[0];
       if(scr==='scrHome')renderHome(); else if(scr==='scrSession')renderSession();
-      else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats();
+      else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats(); else if(scr==='scrMock')renderMock();
       else if(scr==='scrList')refreshList();
     }
     const left = [...dirtyFiles].some(f=>f!=='sess'||sessLoadOK) || dirtyLogs.size>0;
@@ -5507,7 +5513,7 @@ async function refreshRemote(){
       pruneSolvedFromQueues();
       const scr=[...document.querySelectorAll('.scr.on')].map(x=>x.id)[0];
       if(scr==='scrHome')renderHome(); else if(scr==='scrSession')renderSession();
-      else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats();
+      else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats(); else if(scr==='scrMock')renderMock();
       else if(scr==='scrList')refreshList();
     }
     if(stBad) throw stBad.reason;
@@ -5527,7 +5533,7 @@ function tabLogApply(){ tabLogPending=false;
   pruneSolvedFromQueues();
   const scr=[...document.querySelectorAll('.scr.on')].map(x=>x.id)[0];
   if(scr==='scrHome')renderHome(); else if(scr==='scrSession')renderSession();
-  else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats();
+  else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats(); else if(scr==='scrMock')renderMock();
   else if(scr==='scrList')refreshList();
 }
 let tabAdopted=false;
@@ -6047,17 +6053,17 @@ function weeksBack(n){
 }
 
 const HOW_TPL=[
-  {key:'daily',    name:'공부',       mode:'auto',   desc:'고른 범위 · 복습+신규 · 셔플 — 매일 스스로 채움',
+  {key:'daily',    name:'공부',       mode:'auto',   desc:'고른 범위 복습 + 새 카드 하루 50장 · 섞어서',
    how:{status:['due','new'], order:'shuffle', weights:{}, limit:null, bury:true,  newAfter:false, newMax:50}},
-  {key:'retrieve', name:'전량 인출',   mode:'manual', desc:'전체 · 셔플 — 범위를 직접 넣고, 못 푼 건 다음날로 이월',
+  {key:'retrieve', name:'전량 인출',   mode:'manual', desc:'고른 범위 전부 · 섞어서',
    how:{status:['all'], order:'shuffle', weights:{}, limit:null, bury:false, newAfter:false}},
-  {key:'read',     name:'통독',        mode:'manual', desc:'전체 · 문서순 — 범위를 직접 넣습니다',
+  {key:'read',     name:'통독',        mode:'manual', desc:'고른 범위 전부 · 정리 노트 순서',
    how:{status:['all'], order:'doc',     weights:{}, limit:null, bury:false, newAfter:false}},
-  {key:'weak',     name:'약점 몰아풀기',mode:'auto',   desc:'약점 · 위험도 순 · 50장',
+  {key:'weak',     name:'약점 몰아풀기',mode:'auto',   desc:'자주 틀린 · 덜 굳은 카드 50장 · 섞어서',
    how:{status:['weak'],order:'shuffle', weights:{}, limit:50,   bury:false, newAfter:false}},
-  {key:'intake',   name:'새 카드 넣기', mode:'manual', desc:'신규 · 문서순 · 앞뒤 나눠 내기 — 범위를 직접 넣음',
+  {key:'intake',   name:'새 카드 넣기', mode:'manual', desc:'고른 범위 새 카드 · 정리 노트 순서',
    how:{status:['new'], order:'doc',     weights:{}, limit:null, bury:true,  newAfter:false}},
-  {key:'exam',     name:'배점 가중',   mode:'auto',   desc:'복습 · 과목 비중 섞기 · 100장',
+  {key:'exam',     name:'배점 가중',   mode:'auto',   desc:'복습할 카드 100장 · 과목 배점 비율로 섞어서',
    how:{status:['due'], order:'weighted',weights:{}, limit:100,  bury:true,  newAfter:false}},
 ];
 let sessions=[], curSess=null, viewSess=null;
@@ -7536,6 +7542,7 @@ function go(id){
   if(id==='scrUnits')renderUnits();
   if(id==='scrList'){ picking=false; picked.clear(); listCond=null; $('qSearch').value=''; syncBulk(); renderList(true); }
   if(id==='scrStats')renderStats();
+  if(id==='scrMock'){ MKE=null; renderMock(); }
   if(id==='scrHelp')renderHelpToc();
   if(id==='scrRead')renderRead();
   if(id==='scrWeak')renderWeak();
@@ -8505,8 +8512,6 @@ function rngBind(id, valId, apply){ const r=$(id); const pct=()=>Math.round(+r.v
 rngBind('xretRange','xretVal', setExamRet);
 $('examDate').addEventListener('change', ()=>setExamDay($('examDate').value||null));
 $('examClear').onclick=()=>setExamDay(null);
-$('mockOpen').onclick=mockOpen;
-$('ovlMock').onclick=e=>{ if(e.target===$('ovlMock')) $('ovlMock').classList.remove('show'); };
 rngBind('retRange','retVal', setRetention);
 rngBind('cretRange','cretVal', setCurricRet);
 function setFocus(sel){
@@ -8922,7 +8927,7 @@ document.addEventListener('keydown',e=>{
 
 const K_LIGHT='cards_light_v1';
 let theme=(v=>v==='b'?'dark':v==='c'?'paper':(['auto','white','paper','dark'].includes(v)?v:'auto'))(lsGet(K_THEME));
-let lightPref=lsGet(K_LIGHT)==='white'?'white':'paper';
+let lightPref='paper';
 function applyTheme(){ const de=document.documentElement;
   if(theme==='auto') delete de.dataset.theme; else de.dataset.theme=theme;
   de.dataset.light=lightPref; lsSet(K_THEME,theme); lsSet(K_LIGHT,lightPref);
@@ -10004,40 +10009,43 @@ let MOCK=(()=>{ try{ return mockClean(JSON.parse(lsGet(K_MOCK)||'null')); }catch
 let mockAt=(()=>{ try{ return +lsGet('cards_mock_at_v1')||0; }catch(e){ return 0; } })();
 function mockTake(m, at){ MOCK=mockClean(m)||null; mockAt=at||0; try{ lsSet(K_MOCK, JSON.stringify(MOCK)); lsSet('cards_mock_at_v1', String(mockAt)); }catch(e){} }
 function mockSave(rounds){ rounds=rounds.slice().sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:0);
-  mockTake({v:1, rounds}, Date.now()); cacheState(); markDirty('sess'); mockSheetRender(); if($('scrStats').classList.contains('on')) renderStats(); }
+  mockTake({v:1, rounds}, Date.now()); cacheState(); markDirty('sess'); if($('scrMock').classList.contains('on')) renderMock(); if($('scrStats').classList.contains('on')) renderStats(); }
 const MOCK_MAX={A:39, B:41};
 let MKE=null;
-function mockOpen(){ MKE=null; mockSheetRender(); $('ovlMock').classList.add('show'); }
-function mockSheetRender(){ const box=$('mkBody'); if(!box) return; const R=((MOCK&&MOCK.rounds)||[]).slice().reverse();
-  const sub=$('mockOpenSub'); if(sub) sub.textContent=R.length?R.length+'회':'';
-  if(MKE){ const r=MKE, v=x=>x==null?'':String(x);
-    box.innerHTML=`<h2>${r.key?'회차 고치기':'회차 추가'}</h2>
-      <section class="grp mk-form">
-        <label class="mk-fr"><span>날짜</span><input type="date" id="mkfDate" class="set-date" value="${esc(r.date||todayKey())}"></label>
-        <label class="mk-fr"><span>이름</span><input type="text" id="mkfName" class="mk-in" maxlength="30" placeholder="1회" value="${esc(r.src||'')}"></label>
-        <div class="mk-fr"><span>A</span><span class="mk-sc"><input type="number" inputmode="numeric" id="mkfA" class="mk-in n" min="0" max="${MOCK_MAX.A}" placeholder="—" value="${v(r.A&&r.A[0])}" aria-label="A 득점"><i>/ ${MOCK_MAX.A}</i></span></div>
-        <div class="mk-fr"><span>B</span><span class="mk-sc"><input type="number" inputmode="numeric" id="mkfB" class="mk-in n" min="0" max="${MOCK_MAX.B}" placeholder="—" value="${v(r.B&&r.B[0])}" aria-label="B 득점"><i>/ ${MOCK_MAX.B}</i></span></div>
-      </section>
-      <div class="btn-row">${r.key?'<button class="btn-ghost" id="mkfDel" style="color:var(--c-danger);flex:0 0 auto;border-color:transparent">지우기</button>':''}<button class="btn-ghost" id="mkfCancel">취소</button><button class="btn-primary" id="mkfOk">저장</button></div>`;
-    $('mkfCancel').onclick=()=>{ MKE=null; mockSheetRender(); };
-    $('mkfOk').onclick=()=>{ const num=id=>{ const t=$(id).value.trim(); if(t==='') return null; const n=Number(t); return isFinite(n)&&n>=0?Math.round(n*10)/10:NaN; };
-      const date=$('mkfDate').value, a=num('mkfA'), am=MOCK_MAX.A, b=num('mkfB'), bm=MOCK_MAX.B;
-      if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){ toast('날짜 없음'); return; }
-      if([a,am,b,bm].some(x=>Number.isNaN(x)) || (a!=null&&!(am>0&&a<=am)) || (b!=null&&!(bm>0&&b<=bm))){ toast('만점보다 큼'); return; }
-      if(a==null&&b==null){ toast('A·B 중 하나는 넣기'); return; }
-      const rec={key:r.key||('m'+Date.now().toString(36)), src:$('mkfName').value.trim()||'모의고사', rnd:'', date, full:a!=null&&b!=null, A:a!=null?[a,am]:null, B:b!=null?[b,bm]:null};
-      const rest=((MOCK&&MOCK.rounds)||[]).filter(x=>x.key!==rec.key); MKE=null; mockSave([...rest, rec]); toast('저장됨'); };
-    const del=$('mkfDel'); if(del) del.onclick=()=>{ if(!confirm('이 회차 점수를 지웁니다.')) return; const rest=((MOCK&&MOCK.rounds)||[]).filter(x=>x.key!==r.key); MKE=null; mockSave(rest); toast('지움'); };
-    return; }
+function mkRerender(){ if($('scrMock') && $('scrMock').classList.contains('on')) renderMock(); else renderStats(); }
+function renderMock(){ const box=$('mockBody'); if(!box) return; const R=((MOCK&&MOCK.rounds)||[]).slice();
+  const sb=$('statsBody'); if(sb) sb.querySelectorAll('.mk-box').forEach(x=>x.remove());
+  const r=MKE||{}, v=x=>x==null?'':String(x), kd=r.kinds||{}, KS=[['모름','var(--c-indigo)'],['핀트','var(--c-orange)'],['실수','var(--c-pink)'],['버림','var(--c-ter)']];
+  const names=[...new Set(R.map(x=>x.src).filter(Boolean))].slice(-30);
+  let g=''; try{ g=mockSection(); }catch(e){ console.warn('[모의고사] 그리기 실패', e); g=''; }
   const md=k=>Number(k.slice(5,7))+'/'+Number(k.slice(8,10));
-  box.innerHTML=`<h2>모의고사 점수</h2>`
-    +(R.length?`<section class="grp">${R.map(r=>{ const t=(r.A?r.A[0]:0)+(r.B?r.B[0]:0), m=(r.A?r.A[1]:0)+(r.B?r.B[1]:0);
-      return `<button class="gr-row" data-mk="${esc(r.key)}"><span class="gr-b"><span class="gr-t">${esc(r.src||'모의고사')}</span><span class="gr-s">${md(r.date)}${r.A&&r.B?'':r.A?' · A만':' · B만'}</span></span><span class="gr-r">${t}<small>/${m}</small></span><svg class="s2-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg></button>`; }).join('')}</section>`
-      :'')
-    +`<div class="btn-row"><button class="btn-ghost" id="mkClose">닫기</button><button class="btn-primary" id="mkAdd">회차 추가</button></div>`;
-  box.querySelectorAll('[data-mk]').forEach(b=>b.onclick=()=>{ const r=((MOCK&&MOCK.rounds)||[]).find(x=>x.key===b.dataset.mk); if(r){ MKE={...r}; mockSheetRender(); } });
-  $('mkAdd').onclick=()=>{ MKE={date:todayKey()}; mockSheetRender(); };
-  $('mkClose').onclick=()=>$('ovlMock').classList.remove('show');
+  box.innerHTML=`<div id="mockGraph">${g}</div>`
+    +`<div class="h-sec">${r.key?'기록 고치기':'기록 추가'}</div>
+      <section class="grp mk-form">
+        <label class="mk-fr"><span>회차</span><input type="text" id="mkfName" class="mk-in" maxlength="40" list="mkfL" autocomplete="off" placeholder="예: 27 ○○ 3회" value="${esc(r.src||'')}"></label>
+        <datalist id="mkfL">${names.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
+        <label class="mk-fr"><span>날짜</span><input type="date" id="mkfDate" style="flex:0 1 170px;min-width:0" value="${esc(r.date||todayKey())}"></label>
+        <div class="mk-fr"><span>A</span><span class="mk-sc"><input type="text" inputmode="decimal" id="mkfA" class="mk-in n" maxlength="5" placeholder="0 ~ ${MOCK_MAX.A}" value="${v(r.A&&r.A[0])}" aria-label="A 점수"><i>점</i></span></div>
+        <div class="mk-fr"><span>B</span><span class="mk-sc"><input type="text" inputmode="decimal" id="mkfB" class="mk-in n" maxlength="5" placeholder="0 ~ ${MOCK_MAX.B}" value="${v(r.B&&r.B[0])}" aria-label="B 점수"><i>점</i></span></div>
+      </section>
+      <div class="h-sec">틀린 문항</div>
+      <section class="grp mk-form">${KS.map(([nm,c],k)=>`<div class="mk-fr"><span><i class="mk-dot" style="background:${c}"></i>${nm}</span><span class="mk-sc"><input type="text" inputmode="numeric" id="mkfK${k}" class="mk-in n" maxlength="2" placeholder="—" value="${v(kd[nm])}" aria-label="${nm} 개수"><i>개</i></span></div>`).join('')}</section>
+      <div class="btn-row">${r.key?'<button class="btn-ghost" id="mkfDel" style="color:var(--c-danger);flex:0 0 auto;border-color:transparent">지우기</button><button class="btn-ghost" id="mkfCancel">취소</button>':''}<button class="btn-primary" id="mkfOk">${r.key?'저장':'기록 추가'}</button></div>`
+    +(R.length?`<div class="h-sec">기록 ${R.length}회</div><section class="grp">${R.slice().reverse().map(x=>{ const t=(x.A?x.A[0]:0)+(x.B?x.B[0]:0), m=(x.A?x.A[1]:0)+(x.B?x.B[1]:0);
+      return `<button class="gr-row" data-mk="${esc(x.key)}"><span class="gr-b"><span class="gr-t">${esc(x.src||'모의고사')}</span><span class="gr-s">${md(x.date)}${x.A&&x.B?'':x.A?' · A만':' · B만'}</span></span><span class="gr-r">${Math.round(t*100)/100}<small>/${m}</small></span><svg class="s2-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5 7.5 7.5 1.5 13.5"/></svg></button>`; }).join('')}</section>`:'');
+  mkSel(null);
+  box.querySelectorAll('[data-mk]').forEach(b=>b.onclick=()=>{ const x=((MOCK&&MOCK.rounds)||[]).find(z=>z.key===b.dataset.mk); if(x){ MKE={...x}; renderMock(); const f=$('mkfName'); if(f) f.scrollIntoView({block:'center'}); } });
+  const cancel=$('mkfCancel'); if(cancel) cancel.onclick=()=>{ MKE=null; renderMock(); };
+  $('mkfOk').onclick=()=>{ const num=(id,mx)=>{ const t=$(id).value.trim(); if(t==='') return null; if(!/^\d{1,2}(\.\d{1,2})?$/.test(t)) return NaN; const n=parseFloat(t); return n>=0&&n<=mx?n:NaN; };
+    const date=$('mkfDate').value, a=num('mkfA', MOCK_MAX.A), b=num('mkfB', MOCK_MAX.B);
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){ toast('날짜 없음'); return; }
+    if(Number.isNaN(a)||Number.isNaN(b)){ toast('점수 = A 0~'+MOCK_MAX.A+' · B 0~'+MOCK_MAX.B); return; }
+    if(a==null&&b==null){ toast('A·B 중 하나는 넣기'); return; }
+    const kinds={}; for(let k=0;k<KS.length;k++){ const t=$('mkfK'+k).value.trim(); if(t==='') continue; if(!/^\d{1,2}$/.test(t)){ toast(KS[k][0]+' = 숫자'); return; } if(+t) kinds[KS[k][0]]=+t; }
+    const rec={...(MKE&&MKE.key?MKE:{}), key:(MKE&&MKE.key)||('m'+Date.now().toString(36)), src:$('mkfName').value.trim()||'모의고사', rnd:(MKE&&MKE.key&&MKE.rnd)||'', date, full:a!=null&&b!=null,
+      A:a!=null?[a,MOCK_MAX.A]:null, B:b!=null?[b,MOCK_MAX.B]:null, kinds};
+    const was=!!(MKE&&MKE.key), rest=((MOCK&&MOCK.rounds)||[]).filter(x=>x.key!==rec.key); MKE=null; MKI=null; mockSave([...rest, rec]); toast(was?'저장됨':'추가됨'); };
+  const del=$('mkfDel'); if(del) del.onclick=()=>askConfirm('기록 지우기', '이 회차 기록을 지웁니다.', ()=>{ const rest=((MOCK&&MOCK.rounds)||[]).filter(x=>x.key!==r.key); MKE=null; MKI=null; mockSave(rest); toast('지움'); });
 }
 let MKM=(()=>{ try{ return lsGet('cards_mock_mode')==='ab'?'ab':'t'; }catch(e){ return 't'; } })(), MKI=null;
 let MKV=(()=>{ try{ return lsGet('cards_mock_range')==='all'?'all':'10'; }catch(e){ return '10'; } })(), MKF=(()=>{ try{ return lsGet('cards_mock_full')==='1'; }catch(e){ return false; } })();
@@ -10093,7 +10101,7 @@ function mkSel(i){ const R=window.MK_R||[]; if(!R.length || !$('mkBig')) return;
   document.querySelectorAll('.mk-pt').forEach(c=>c.classList.toggle('on', +c.dataset.i===i)); document.querySelectorAll('.mk-bar').forEach(c=>c.classList.toggle('dim', !live && +c.dataset.i!==i));
   document.querySelectorAll('.mk-wrap .mk-x').forEach(xl=>{ const x=mkX(i,n); xl.setAttribute('x1',x); xl.setAttribute('x2',x); xl.style.opacity=live?0:1; }); }
 function mkScrub(ev){ const rv=ev.type==='pointerdown'&&ev.target.closest&&ev.target.closest('[data-mkv],[data-mkf]');
-  if(rv){ if(rv.dataset.mkv){ MKV=rv.dataset.mkv; try{ lsSet('cards_mock_range', MKV); }catch(e){} } else { MKF=!MKF; try{ lsSet('cards_mock_full', MKF?'1':'0'); }catch(e){} } MKI=null; renderStats(); return; }
+  if(rv){ if(rv.dataset.mkv){ MKV=rv.dataset.mkv; try{ lsSet('cards_mock_range', MKV); }catch(e){} } else { MKF=!MKF; try{ lsSet('cards_mock_full', MKF?'1':'0'); }catch(e){} } MKI=null; mkRerender(); return; }
   const sg=ev.target.closest&&ev.target.closest('[data-mkm]');
   if(sg && ev.type==='pointerdown'){ MKM=sg.dataset.mkm; try{ lsSet('cards_mock_mode', MKM); }catch(e){} document.querySelectorAll('[data-mkm]').forEach(b=>b.classList.toggle('on', b===sg)); const sv=$('mkSv'); if(sv) sv.innerHTML=mockScore(window.MK_R||[])+`<rect class="mk-hit" x="0" y="0" width="${MK_W}" height="${MK_H}" fill="transparent"/>`; mkSel(MKI); return; }
   const w=ev.target.closest&&ev.target.closest('.mk-wrap'); if(!w){ if(ev.type==='pointerdown' && MKI!=null && !ev.target.closest('.mk-box')) mkSel(null); return; }
@@ -10235,6 +10243,7 @@ function renderStats(){
   adv+='<div class="cap" style="margin-top:14px">끈 카드 '+ret.toLocaleString()+' · 내일로 뺌 '+bur.toLocaleString()+'</div>';
   h+='<div class="card-box"><details><summary style="cursor:pointer;font-weight:600">자세히 — 풀이량 · 분포 · 추이</summary>'+adv+'</details></div>';
 
+  { const mb=$('mockGraph'); if(mb) mb.innerHTML=''; }
   $('statsBody').innerHTML=h; mkSel(null);
   { const hd={}; if(T&&T.hist) for(let i=1;i<T.hist.length;i++) hd[T.hist[i].k]=Math.max(0,T.hist[i].hard-T.hist[i-1].hard);
     $('statsBody').querySelectorAll('.hm-grid .hm-c').forEach(c=>c.onclick=()=>{ hmSel=c.dataset.k;
@@ -10552,7 +10561,7 @@ $('btnConnect').onclick=async()=>{
 function renderHelpToc(){
   document.querySelectorAll('.hp-n-cards').forEach(el=>{ el.textContent=DATA.length.toLocaleString(); });
   document.querySelectorAll('.hp-n-units').forEach(el=>{ el.textContent=Object.keys(TAGMETA).length.toLocaleString(); });
-  const box=$('hpToc'); if(box.dataset.built) return;
+  const box=$('hpToc'); if(!box || box.dataset.built) return;
   const secs=[...document.querySelectorAll('#scrHelp details.hp')];
   box.innerHTML='';
   for(const d of secs){
