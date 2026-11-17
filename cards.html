@@ -1891,24 +1891,22 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 <div class="ovl" id="ovlSess"><div class="sheet wide">
   <h2 id="nsTitle">새 세션</h2>
   <div class="field"><label>이름</label><input id="nsName" type="text" maxlength="24" placeholder="예: 국어"></div>
-  <div class="field"><label>방식</label><div class="mini-chips" id="nsTpl"></div>
-    <div class="desc" id="nsTplDesc" style="margin:6px 2px 0"></div></div>
-  <details class="fold" id="nsFold"><summary>세부 설정</summary>
-    <div class="field" style="margin-top:12px"><label>상태</label><div class="mini-chips" id="nsStatus"></div></div>
-    <div class="field"><label>제시 순서</label><div class="seg" id="nsOrder">
-      <button data-v="shuffle">셔플</button><button data-v="doc">문서순</button><button data-v="weighted">비중 섞기</button></div></div>
-    <div class="field" id="nsWtField" style="display:none"><label>과목 가중치 (배점 비율)</label><div class="wt-grid" id="nsWts"></div></div>
-    <div class="field"><label>분량 (비우면 전량)</label><input id="nsLimit" type="number" inputmode="numeric" min="1" placeholder="전량"></div>
-    <div class="field"><label>신규 하루 최대 (비우면 제한 없음)</label><input id="nsNewMax" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
-    <div class="field"><label>내용 채우기</label><div class="seg" id="nsMode">
-      <button data-v="auto">자동 충전</button><button data-v="manual">직접 추가</button></div>
-      <div class="desc" style="margin:6px 2px 0">자동 충전 = 범위 전체에서 매일 다시 채움 · 직접 추가 = 세션 화면에서 넣고 잔량은 이월</div></div>
-    <div class="field"><label>유형 (비우면 전체)</label><div class="mini-chips" id="nsTyps"></div></div>
-    <div class="field"><label>과목 (비우면 전체)</label><div class="mini-chips" id="nsSubj"></div></div>
-    <div class="field" id="nsTagField"><label>태그 (비우면 전체)</label><div class="mini-chips" id="nsTagChips"></div></div>
-    <div class="tgl-row"><span>앞뒤 나눠 내기 (뒤집은 카드는 다음 날부터)</span><div class="tgl" id="nsBury"></div></div>
-    <div class="tgl-row"><span>복습 소진 후 신규 이어가기</span><div class="tgl" id="nsNewAfter"></div></div>
-  </details>
+  <div class="field"><label>하루 새 카드</label><input id="nsNewMax" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
+  <div class="field"><label>하루 최대</label><input id="nsLimit" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
+  <div class="field"><label>순서</label><div class="seg" id="nsOrder">
+    <button data-v="shuffle">섞기</button><button data-v="doc">정리 노트 순서</button><button data-v="weighted" hidden>비중 섞기</button></div></div>
+  <div class="tgl-row"><span>앞뒤 카드는 다른 날에</span><div class="tgl" id="nsBury"></div></div>
+  <div hidden>
+    <div class="mini-chips" id="nsTpl"></div><div class="desc" id="nsTplDesc"></div>
+    <details id="nsFold"><summary>숨김</summary>
+      <div class="mini-chips" id="nsStatus"></div>
+      <div id="nsWtField"><div class="wt-grid" id="nsWts"></div></div>
+      <div class="seg" id="nsMode"><button data-v="auto">자동</button><button data-v="manual">직접</button></div>
+      <div class="mini-chips" id="nsTyps"></div><div class="mini-chips" id="nsSubj"></div>
+      <div id="nsTagField"><div class="mini-chips" id="nsTagChips"></div></div>
+      <div class="tgl" id="nsNewAfter"></div>
+    </details>
+  </div>
   <div class="btn-row"><button class="btn-ghost" id="nsDelete" style="color:var(--again);margin-right:auto;flex:0 0 auto;padding:10px 14px;border-color:transparent">삭제</button><button class="btn-ghost" id="nsCancel">취소</button><button class="btn-primary" id="nsSave">만들기</button></div>
 </div></div>
 
@@ -7611,17 +7609,12 @@ function bkNote(){
 }
 function sessDesc(sx){
   const parts=[];
-  if(isFixed(sx)){
-    const n=(sx.scope.units||[]).length+(sx.scope.mids||[]).length;
-    parts.push(n?`직접 담음 · 범위 ${n}`:'직접 담음 · 범위 없음');
-  } else parts.push('매일 자동');
+  if(isFixed(sx)){ const n=(sx.scope.units||[]).length+(sx.scope.mids||[]).length; if(!n) parts.push('범위 없음'); }
   if((sx.scope.subj||[]).length)parts.push(sx.scope.subj.map(x=>x.split('.')[1]).join('·'));
-  if((sx.scope.typ||[]).length)parts.push(sx.scope.typ.join('·'));
   if((sx.scope.tags||[]).length)parts.push(sx.scope.tags.join('·'));
-  parts.push(stArr(sx.how.status).map(k=>({due:'복습',new:'신규',all:'전체',weak:'약점'}[k]||k)).join('+'));
-  if(sx.how.order==='doc')parts.push('문서순'); else if(sx.how.order==='weighted')parts.push('과목 가중');
-  if(sx.how.limit)parts.push(sx.how.limit+'장');
-  if(sx.how.newMax)parts.push('신규 하루 '+sx.how.newMax+'장');
+  if(sx.how.order==='doc')parts.push('정리 노트 순서');
+  if(sx.how.newMax)parts.push('새 카드 하루 '+sx.how.newMax+'장');
+  if(sx.how.limit)parts.push('하루 최대 '+sx.how.limit+'장');
   return parts.join(' · ');
 }
 function deadScopeKeys(){
@@ -8278,7 +8271,7 @@ function openUnitPick(o){
   pkSel={units:((o.selected&&o.selected.units)||[]).slice(), mids:((o.selected&&o.selected.mids)||[]).slice()};
   pkOnOk=o.onOk||null; pkOnPick=o.onPick||null;
   $('pkTitle').textContent=o.title||'고르기';
-  $('pkDesc').textContent=(o.desc||'')+(o.sessions?'':' · 왼쪽 네모=선택, 이름=펼치기');
+  $('pkDesc').textContent='';
   $('pkSearch').style.display=pkMode==='sessions'?'none':'block';
   $('pkOk').style.display=pkMode==='sessions'?'none':'block';
   $('pkSearch').value='';
