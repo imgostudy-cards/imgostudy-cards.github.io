@@ -1891,8 +1891,8 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 <div class="ovl" id="ovlSess"><div class="sheet wide">
   <h2 id="nsTitle">새 세션</h2>
   <div class="field"><label>이름</label><input id="nsName" type="text" maxlength="24" placeholder="예: 국어"></div>
-  <div class="field"><label>하루 새 카드</label><input id="nsNewMax" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
-  <div class="field"><label>하루 최대</label><input id="nsLimit" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
+  <div class="field"><label>하루 최대 새 카드</label><input id="nsNewMax" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
+  <div class="field"><label>하루 최대 전체 카드</label><input id="nsLimit" type="number" inputmode="numeric" min="1" placeholder="제한 없음"></div>
   <div class="field"><label>순서</label><div class="seg" id="nsOrder">
     <button data-v="shuffle">섞기</button><button data-v="doc">정리 노트 순서</button><button data-v="weighted" hidden>비중 섞기</button></div></div>
   <div class="tgl-row"><span>앞뒤 카드는 다른 날에</span><div class="tgl" id="nsBury"></div></div>
@@ -7613,8 +7613,8 @@ function sessDesc(sx){
   if((sx.scope.subj||[]).length)parts.push(sx.scope.subj.map(x=>x.split('.')[1]).join('·'));
   if((sx.scope.tags||[]).length)parts.push(sx.scope.tags.join('·'));
   if(sx.how.order==='doc')parts.push('정리 노트 순서');
-  if(sx.how.newMax)parts.push('새 카드 하루 '+sx.how.newMax+'장');
-  if(sx.how.limit)parts.push('하루 최대 '+sx.how.limit+'장');
+  if(sx.how.newMax)parts.push('새 카드 하루 최대 '+sx.how.newMax+'장');
+  if(sx.how.limit)parts.push('전체 하루 최대 '+sx.how.limit+'장');
   return parts.join(' · ');
 }
 function deadScopeKeys(){
