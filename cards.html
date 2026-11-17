@@ -4858,10 +4858,20 @@ const SbAuth=(()=>{
   async function fetchUser(){ const t=await token(); if(!t) return null;
     const r=await fetch(`${SB_CFG.url}/auth/v1/user`, { headers:H(t), cache:'no-store' }); if(!r.ok) return null;
     const u=await r.json(); load(); if(ses){ ses.user=u; save(ses); } return u; }
+  async function gone(){
+    let t=null; try{ t=await token(); }catch(e){ return (e&&e.code==='auth') ? 'session' : ''; }
+    if(!t) return '';
+    const ac=typeof AbortController==='function' ? new AbortController() : null; const tm=ac && setTimeout(()=>ac.abort(), 3000);
+    try{ const r=await fetch(`${SB_CFG.url}/auth/v1/user`, { headers:H(t), cache:'no-store', signal:ac&&ac.signal });
+      if(r.status!==403 && r.status!==404) return '';
+      let c=''; try{ const j=await r.json(); c=String(j.error_code||j.code||''); }catch(_){}
+      return c==='user_not_found' ? 'user' : c==='session_not_found' ? 'session' : '';
+    }catch(e){ return ''; } finally{ if(tm) clearTimeout(tm); }
+  }
   async function signOut(){ load(); const t=ses && ses.access_token;
     if(t) try{ await fetch(`${SB_CFG.url}/auth/v1/logout?scope=local`, { method:'POST', headers:H(t) }); }catch(e){}
     save(null); }
-  return { on, load, signIn, link, handleRedirect, token, fetchUser, signOut, H,
+  return { on, load, signIn, link, handleRedirect, token, fetchUser, gone, signOut, H,
     signedIn:()=>{ load(); return !!(ses && ses.refresh_token); }, uid:()=>(load()&&ses.user&&ses.user.id)||'', user:()=>(load()&&ses.user)||null, clear:()=>save(null) };
 })();
 
@@ -5084,6 +5094,10 @@ async function storeInit(){
   if(STORE_KIND==='github'){ await GitHubStore.init(); return null; }
   let rd=null;
   if(SbAuth.on()){ try{ rd=await SbAuth.handleRedirect(); }catch(e){ rd={ error:String(e&&e.message||e) }; } }
+  if(SbAuth.on() && SbAuth.signedIn() && !(rd && rd.ok)){
+    const g=await SbAuth.gone();
+    if(g){ SbAuth.clear(); setTimeout(()=>showBanner(g==='user' ? '탈퇴한 계정 — 로그인 풀림 · 기록은 이 기기에만' : '로그인이 풀림 — 다시 로그인', true), 0); }
+  }
   if(SbAuth.on() && SbAuth.signedIn()){ store=SupabaseStore; await SupabaseStore.init(); }
   else store=LocalStore;
   if(rd && rd.ok) rd.owner=lsGet(K_SBOWNER)||'';
