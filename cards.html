@@ -1441,6 +1441,47 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
 .lh-tile.zero{background:var(--c-tile);opacity:.5;}
 .lh-main .lh-tile{min-height:60px;}
 .lh-units{background:var(--c-card);border-radius:var(--r-group);box-shadow:var(--sh-card);margin-top:12px;}
+.uc-sheet{max-width:560px;}
+.uc-seg{display:flex;margin:12px 0 16px;}
+.uc-seg button{flex:1;}
+.uc-grp{background:var(--c-card);border-radius:var(--r-group);box-shadow:var(--sh-card);margin-bottom:22px;overflow:hidden;}
+.uc-row{display:flex;align-items:center;min-height:44px;padding:0 16px 0 20px;gap:12px;position:relative;cursor:pointer;}
+.uc-row+.uc-row::before{content:"";position:absolute;left:20px;right:20px;top:0;height:1px;transform:scaleY(.5);background:var(--c-sep);}
+.uc-k{flex:0 0 auto;font-size:17px;color:var(--c-label);}
+.uc-row select{flex:1;min-width:0;border:0;background:transparent;text-align:right;text-align-last:right;font-size:17px;color:var(--c-acc);padding:10px 0;-webkit-appearance:none;appearance:none;outline:none;font-family:inherit;}
+.uc-row select:disabled{color:var(--c-sec);}
+.uc-h{font-size:13px;font-weight:600;color:var(--c-sec);margin:0 20px 6px;}
+.uc-box{padding:10px 16px 12px 20px;}
+.uc-box textarea{display:block;width:100%;border:0;background:transparent;resize:none;font-size:17px;line-height:1.45;color:var(--c-label);padding:4px 0;outline:none;font-family:inherit;min-height:44px;box-sizing:border-box;}
+.uc-box textarea+textarea{margin-top:6px;}
+.uc-box textarea.bad,.uc-grp.bad{box-shadow:inset 0 0 0 1.5px var(--c-red);}
+.uc-tools{display:flex;gap:8px;margin-top:8px;}
+.uc-chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:18px;background:var(--c-acc-tint);color:var(--c-acc);font-size:15px;font-weight:600;}
+.uc-chip svg{width:17px;height:17px;}
+.uc-chip:disabled,.uc-chip.dim{opacity:.4;}
+.uc-chip.plain{background:var(--c-fill);color:var(--c-label);}
+.uc-prev{margin-top:8px;font-size:15px;line-height:1.5;color:var(--c-label);word-break:keep-all;overflow-wrap:anywhere;}
+.uc-prev:empty{display:none;}
+.uc-prev .bk{display:inline-block;min-width:2.4em;padding:0 6px;margin:0 1px;border-radius:6px;background:var(--c-fill);color:var(--c-sec);font-weight:600;text-align:center;}
+.uc-prev .an{color:var(--c-sec);font-weight:600;margin-right:10px;}
+.uc-prev ol,.uc-prev ul{margin:0;padding-left:1.4em;}
+.uc-ph{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.uc-ph .pt{position:relative;width:72px;height:72px;border-radius:12px;overflow:hidden;background:var(--c-fill);flex:0 0 auto;}
+.uc-ph .pt img{width:100%;height:100%;object-fit:cover;display:block;}
+.uc-ph .pt .x{position:absolute;top:2px;right:2px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;}
+.uc-ph .pt .x span{width:24px;height:24px;border-radius:12px;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;}
+.uc-ph .pt .x svg{width:13px;height:13px;}
+.uc-ph .add{width:72px;height:72px;border-radius:12px;background:var(--c-acc-tint);color:var(--c-acc);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;font-weight:600;}
+.uc-ph .add svg{width:24px;height:24px;}
+.uc-ph .add:disabled{background:var(--c-fill);color:var(--c-sec);}
+.uc-ph .busy{width:72px;height:72px;border-radius:12px;background:var(--c-fill);display:flex;align-items:center;justify-content:center;color:var(--c-sec);font-size:13px;}
+#ucOrdRow{padding:0;min-height:44px;margin-top:4px;}
+.lh-mine{background:var(--c-card);border-radius:var(--r-group);box-shadow:var(--sh-card);margin-bottom:12px;}
+.lh-mine .gr-v{margin-left:auto;font-size:17px;color:var(--c-sec);}
+.uc-plus{margin-left:auto;}
+.lrow .uc-ph-n{color:var(--c-sec);}
+.uc-empty{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:28px 4px;}
+.uc-empty b{font-size:17px;font-weight:600;}
 
 
 .u-row .rd{display:none;}
@@ -1560,6 +1601,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
       <button class="hs-row" id="hsHd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg>정리 노트 <span class="ext-ar" aria-hidden="true">↗</span></button>
       <button class="hs-row" id="ctOpen" title="음악·미술·체육 2022 내용 체계표 — 가리고 쓰기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M9.5 4.5v15"/></svg>내용 체계표</button>
       <button class="hs-row" data-go="scrList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>라이브러리</button>
+      <button class="hs-row" id="hsMine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>내 카드</button>
       <button class="hs-row" data-go="scrStats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-6"/></svg>통계</button>
       <button class="hs-row" data-go="scrMock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M5 15l4-5 4 3 6-7"/></svg>모의고사</button>
     </nav>
@@ -1672,7 +1714,7 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
     </div>
 
     <div class="scr" id="scrList">
-      <div class="sub-head"><button class="tb-btn" data-go="scrHome" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="sub-title">라이브러리</div></div>
+      <div class="sub-head"><button class="tb-btn" data-go="scrHome" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><div class="sub-title">라이브러리</div><button class="tb-btn uc-plus" id="ucNew" aria-label="새 카드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
       <div class="sub-body"><div class="sub-inner">
         <div class="search-row"><input id="qSearch" type="search" placeholder="검색 (앞면·뒷면·태그)"><select id="qSort"><option value="doc">문서순</option><option value="recent">최근 푼 순</option><option value="risk">위험도순</option><option value="miss">틀림순</option></select></div>
         <div class="cond-row" id="condRow"></div>
@@ -1916,6 +1958,35 @@ details.gr-fold[open]>summary .s2-chev{transform:rotate(90deg);}
   <input id="pkSearch" type="search" placeholder="과목·대주제·중주제 검색" style="width:100%;margin-bottom:8px">
   <div id="pkList" style="max-height:46vh;overflow-y:auto"></div>
   <div class="btn-row"><button class="btn-ghost" id="pkCancel">취소</button><button class="btn-primary" id="pkOk">확인</button></div>
+</div></div>
+
+<div class="ovl" id="ovlUc"><div class="sheet wide uc-sheet">
+  <h2 id="ucTitle">새 카드</h2>
+  <div class="seg uc-seg" id="ucType"><button data-v="qa">묻고 답</button><button data-v="cloze">빈칸</button><button data-v="list">나열</button></div>
+  <div class="uc-grp">
+    <label class="uc-row"><span class="uc-k">과목</span><select id="ucSubj"></select></label>
+    <label class="uc-row"><span class="uc-k">단위</span><select id="ucUnit"></select></label>
+    <label class="uc-row" id="ucMidRow"><span class="uc-k">세부</span><select id="ucMid"></select></label>
+  </div>
+  <div class="uc-h" id="ucQLab">앞면</div>
+  <div class="uc-grp uc-box" id="ucQBox">
+    <textarea id="ucQ" rows="3" maxlength="2000" aria-labelledby="ucQLab"></textarea>
+    <div class="uc-tools" id="ucClozeTools"><button type="button" class="uc-chip" id="ucBlank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="8" rx="2.5"/></svg>빈칸</button><button type="button" class="uc-chip" id="ucUnblank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>빈칸 해제</button></div>
+    <div class="uc-prev" id="ucPrev"></div>
+    <div class="uc-ph" id="ucPhF"></div>
+  </div>
+  <div class="uc-h" id="ucALab">뒷면</div>
+  <div class="uc-grp uc-box" id="ucABox">
+    <textarea id="ucA" rows="2" maxlength="2000" aria-labelledby="ucALab"></textarea>
+    <textarea id="ucIt" rows="4" maxlength="4000" aria-labelledby="ucALab"></textarea>
+    <div class="tgl-row" id="ucOrdRow"><span>순서 있음</span><div class="tgl" id="ucOrd" role="switch" aria-checked="false"></div></div>
+    <div class="uc-prev" id="ucAnsPrev"></div>
+    <div class="uc-ph" id="ucPhB"></div>
+  </div>
+  <div class="uc-h" id="ucNLab">보충</div>
+  <div class="uc-grp uc-box"><textarea id="ucN" rows="2" maxlength="2000" aria-labelledby="ucNLab"></textarea></div>
+  <input type="file" id="ucFile" accept="image/*" hidden>
+  <div class="btn-row"><button class="btn-ghost" id="ucDel" style="color:var(--again);margin-right:auto;flex:0 0 auto;padding:10px 14px;border-color:transparent">지우기</button><button class="btn-ghost" id="ucCancel">취소</button><button class="btn-primary" id="ucSave">저장</button></div>
 </div></div>
 
 <div class="ovl" id="ovlSettings"><div class="sheet"><button class="sheet-x" id="setCloseX" title="닫기">✕</button>
@@ -4512,7 +4583,7 @@ function pruneOrphans(){
   const seen=(()=>{ try{ return JSON.parse(lsGet(K_ORPH)||'{}'); }catch(e){ return {}; } })();
   const T=todayKey(), next={}, gone=[]; let held=0;
   for(const id in state.cards){
-    if(BYID[id]) continue;
+    if(BYID[id] || isUcId(id)) continue;
     const first=seen[id]||T;
     if(dkDiff(T, first) < ORPH_DAYS){ next[id]=first; held++; continue; }
     const s=state.cards[id]||{};
@@ -4898,7 +4969,7 @@ const SupabaseStore=(()=>{
   const putS={ marks:0, sess:0, fb:0 }, putD={ marks:0, sess:0, fb:0 };
   const putRun=async(doc, fn)=>{ putS[doc]++; try{ return await fn(); } finally{ putD[doc]++; } };
   const mk=k=>'sb_'+uidM+'_'+k;
-  const empty=()=>({ v:1, cur:{ log:0, mark:0 }, marks:{}, docs:{ sess:{ ver:0, body:null }, fb:{ ver:0, body:null } }, und:[], logs:{}, own:[] });
+  const empty=()=>({ v:1, cur:{ log:0, mark:0 }, marks:{}, docs:{ sess:{ ver:0, body:null }, fb:{ ver:0, body:null } }, und:[], logs:{}, own:[], uc:{ cur:0, cards:{} } });
   async function init(){
     const uid=SbAuth.uid();
     if(M) return;
@@ -4906,7 +4977,7 @@ const SupabaseStore=(()=>{
     loading=(async()=>{
       uidM=uid; const m=empty();
       const meta=uid ? await idbGet(mk('meta')) : null;
-      if(meta && meta.v===1){ Object.assign(m, { cur:meta.cur, marks:meta.marks||{}, docs:meta.docs||m.docs, und:meta.und||[], own:meta.own||[] });
+      if(meta && meta.v===1){ Object.assign(m, { cur:meta.cur, marks:meta.marks||{}, docs:meta.docs||m.docs, und:meta.und||[], own:meta.own||[], uc:(meta.uc&&meta.uc.cards)?meta.uc:m.uc });
         for(const w of meta.weeks||[]){ const x=await idbGet(mk('log_'+w)); if(x && Array.isArray(x.log)) m.logs[w]=x; else { m.cur={ log:0, mark:m.cur.mark }; } } }
       M=m; pulledOnce=false; loading=null;
     })();
@@ -4918,7 +4989,7 @@ const SupabaseStore=(()=>{
     const old=await idbGet(mk('meta')); const und=new Set(M.und);
     if(old && Array.isArray(old.und)) for(const w of old.und) if(!delivered.has(w)) und.add(w);
     const weeks=new Set(Object.keys(M.logs)); if(old && Array.isArray(old.weeks)) old.weeks.forEach(w=>weeks.add(w));
-    return idbSet(mk('meta'), { v:1, cur:M.cur, marks:M.marks, docs:M.docs, und:[...und], own:M.own, weeks:[...weeks] });
+    return idbSet(mk('meta'), { v:1, cur:M.cur, marks:M.marks, docs:M.docs, und:[...und], own:M.own, weeks:[...weeks], uc:M.uc });
   });
   const saveWeek=w=>lockM(async()=>{
     const old=await idbGet(mk('log_'+w));
@@ -4997,8 +5068,97 @@ const SupabaseStore=(()=>{
   const docOf=(d, staged)=>clone((staged && staged.body!==undefined) ? staged.body : M.docs[d].body);
   function hold(){ return { sb:null, s:{ ...putS }, d:{ ...putD } }; }
   const mid=(h, doc)=>putS[doc]!==h.s[doc] || putD[doc]!==h.d[doc] || h.s[doc]!==h.d[doc];
+  let ucOff=false;
+  const ucNoFn=e=>e && e.code==='http' && (e.status===404 || e.status===400 || e.status===300);
+  function ucRowIn(r){
+    if(!r || typeof r.c!=='string') return;
+    const v=(r.b && typeof r.b==='object') ? Object.assign({}, r.b, { u:r.u||'' }) : { del:1, u:r.u||'' };
+    const m=M.uc.cards[r.c];
+    if(!m || v.del || (!m.del && (v.u||'')>=(m.u||''))) M.uc.cards[r.c]=v;
+  }
+  async function ucGet(){
+    if(ucOff) return null;
+    let after=M.uc.cur, safe=M.uc.cur;
+    for(let i=0;i<50;i++){
+      let j; try{ j=await rpc('pull_ucards', { p_after:after, p_limit:500 }); }
+      catch(e){ if(ucNoFn(e)){ ucOff=true; return null; } throw e; }
+      const rows=(j&&j.rows)||[], cut=safeCut(j&&j.now);
+      for(const r of rows){ ucRowIn(r); if(Date.parse(r.t)<=cut && r.s>safe) safe=r.s; }
+      if(!rows.length || !j.more) break;
+      after=rows[rows.length-1].s;
+    }
+    if(safe>M.uc.cur) M.uc.cur=safe;
+    await saveMeta();
+    return { v:1, cards:clone(M.uc.cards) };
+  }
+  async function ucPut(buildBody, onMerge){
+    if(ucOff) return;
+    const cards=(buildBody()||{}).cards||{}, rows=[];
+    for(const id in cards){ const v=cards[id], m=M.uc.cards[id]; if(!v || typeof v!=='object') continue;
+      if(m && m.del) continue;
+      if(!m || v.del || (v.u||'')>(m.u||'')) rows.push({ c:id, b:v.del?null:v, u:v.u }); }
+    let lost=false;
+    for(let i=0;i<rows.length;i+=200){ const part=rows.slice(i,i+200);
+      let back; try{ back=await rpc('put_ucards', { p_rows:part }, { keep:true }); }
+      catch(e){ if(ucNoFn(e)){ ucOff=true; return; } throw e; }
+      const sent={}; for(const r of part) sent[r.c]=r;
+      for(const r of back||[]){ const x=sent[r.c]; if(!x || r.u!==x.u || (x.b==null)!==(r.b==null)) lost=true; ucRowIn(r); }
+    }
+    for(const id in cards){ const m=M.uc.cards[id], v=cards[id]; if(m && m.del && v && !v.del) lost=true; }
+    await saveMeta();
+    if(lost && onMerge) onMerge({ v:1, cards:clone(M.uc.cards) });
+  }
+  const PH_RE=/^p[0-9a-f]{16}$/;
+  async function sto(method, path, body, headers){
+    await init();
+    for(let i=0;i<2;i++){
+      const t=await SbAuth.token(i>0); if(!t) throw {code:'auth'};
+      if(!uidM || SbAuth.uid()!==uidM) throw {code:'auth'};
+      const r=await fetch(`${SB_CFG.url}/storage/v1/${path}`, { method, headers:{ ...SbAuth.H(t), ...(headers||{}) }, body, cache:'no-store' });
+      if(r.status===401 && i===0) continue;
+      return r;
+    }
+  }
+  async function stoErr(r){ let j={}; try{ j=JSON.parse(await r.text())||{}; }catch(e){} return { code:String(j.statusCode||j.status||''), msg:String(j.message||j.error||'') }; }
+  async function phUp(pid, data){
+    if(!PH_RE.test(pid)) throw {code:'http', status:400};
+    const r=await sto('POST', `object/ucard/${uidM}/${pid}.jpg`, new Blob([data], { type:'image/jpeg' }), { 'Content-Type':'image/jpeg', 'x-upsert':'false', 'cache-control':'max-age=31536000' });
+    if(r.ok) return true;
+    const e=await stoErr(r);
+    if(r.status===409 || e.code==='409' || /exists|Duplicate/i.test(e.msg)) return true;
+    if(r.status===403 || e.code==='403' || /row-level security|policy/i.test(e.msg)) throw {code:'cap'};
+    if(r.status===413 || e.code==='413') throw {code:'cap'};
+    if(r.status===401) throw {code:'auth'};
+    throw {code:'http', status:r.status};
+  }
+  async function phGet(pid){
+    if(!PH_RE.test(pid)) return null;
+    const r=await sto('GET', `object/authenticated/ucard/${uidM}/${pid}.jpg`);
+    if(r.ok) return await r.blob();
+    if(r.status===404 || r.status===400) return null;
+    throw {code:'http', status:r.status};
+  }
+  async function phDel(pids){
+    const ps=(pids||[]).filter(p=>PH_RE.test(p)); if(!ps.length) return;
+    for(let i=0;i<ps.length;i+=100){
+      const r=await sto('DELETE', 'object/ucard', JSON.stringify({ prefixes:ps.slice(i,i+100).map(p=>`${uidM}/${p}.jpg`) }), { 'Content-Type':'application/json' });
+      if(!r.ok && r.status!==404) throw {code:'http', status:r.status};
+    }
+  }
+  async function phList(){
+    const out=[];
+    for(let off=0; off<5000; off+=1000){
+      const r=await sto('POST', 'object/list/ucard', JSON.stringify({ prefix:uidM+'/', limit:1000, offset:off, sortBy:{ column:'name', order:'asc' } }), { 'Content-Type':'application/json' });
+      if(!r.ok){ if(r.status===404 || r.status===400) return out; throw {code:'http', status:r.status}; }
+      const a=await r.json(); if(!Array.isArray(a)) break;
+      for(const x of a){ const m=/^(p[0-9a-f]{16})\.jpg$/.exec(String(x&&x.name||'')); if(m) out.push({ p:m[1], t:x.created_at||x.updated_at||'' }); }
+      if(a.length<1000) break;
+    }
+    return out;
+  }
   async function get(doc, o){
     await init();
+    if(doc==='uc') return ucGet();
     const h=(o && o.hold) || null;
     if(doc.startsWith('log:')){
       const w=doc.slice(4);
@@ -5030,6 +5190,7 @@ const SupabaseStore=(()=>{
   function peek(doc){ if(!M || !doc.startsWith('log:')) return null; return wkView(doc.slice(4)); }
   async function put(doc, buildBody, onConflict, o){
     await init();
+    if(doc==='uc') return ucPut(buildBody, onConflict);
     const onSend=(o&&o.onSend)||null;
     if(doc.startsWith('log:')){
       const w=doc.slice(4), b=buildBody()||{}, x=M.logs[w]||{ log:[], del:[] };
@@ -5088,6 +5249,7 @@ const SupabaseStore=(()=>{
     try{ return !!(await rpc('landed', { p_rcpt:receipt })); }catch(e){ return null; }
   }
   return { name:'supabase', linked:()=>SbAuth.signedIn(), init, hold, get, ack, put, landed, peek, wipe, rpc,
+    ucOn:()=>SbAuth.signedIn() && !ucOff, phUp, phGet, phDel, phList,
     listFiles:async()=>null, extraWeeks:()=>(M ? M.und.slice() : []),
     _M:()=>M };
 })();
@@ -5390,6 +5552,12 @@ async function pushAll(force){
     await store.put('sess', sessFile, mergeSessInto);
     if(gen('sess')===g) dirtyFiles.delete('sess');
   }
+  if(dirtyFiles.has('uc') && ucSyncOn()){
+    const g=gen('uc');
+    await ucPushPhotos();
+    await store.put('uc', ()=>({v:1, cards:UC}), (rm)=>{ if(ucMergeIn(rm.cards)){ ucInject(); mergedSched=true; } });
+    if(gen('uc')===g){ dirtyFiles.delete('uc'); if(ucSyncOn()) lsDel(K_UCDIRTY); }
+  }
 }
 function hasPending(){ return dirty || dirtyFiles.size>0 || dirtyLogs.size>0; }
 let pushFromHidden=false, netFails=0;
@@ -5418,7 +5586,7 @@ async function push(force){
       else if(scr==='scrUnits')renderUnits(); else if(scr==='scrStats')renderStats(); else if(scr==='scrMock')renderMock();
       else if(scr==='scrList')refreshList();
     }
-    const left = [...dirtyFiles].some(f=>f!=='sess'||sessLoadOK) || dirtyLogs.size>0;
+    const left = [...dirtyFiles].some(f=>(f!=='sess'||sessLoadOK) && (f!=='uc'||ucSyncOn())) || dirtyLogs.size>0;
     setDirty(left); ratedSincePush=0; lastPushAt=Date.now(); hideBanner('save');
     if(!left && tabAdopted) lsSet(K_DIRTY,'1');
     if(left) setTimeout(()=>push(), 1500);
@@ -5482,12 +5650,15 @@ async function refreshRemote(){
     const tw=thisWeek(), pws=[...new Set([refreshWk, weekKeyOf(new Date(Date.now()-86400000))])].filter(w=>w!==tw);
     const H=store.hold(), stDocs=['marks', 'fb', 'sess', logDoc(tw), ...pws.map(w=>logDoc(w))];
     const stP=Promise.allSettled(stDocs.map(doc=>store.get(doc,{hold:H})));
+    const ucP=ucSyncOn() ? store.get('uc').catch(e=>{ console.warn('[내 카드] 받기 실패', e); return null; }) : Promise.resolve(null);
     if((!dataDay || dataDay!==todayKey() || Date.now()-dataAt>36e5) && await dataChanged()){
       await loadData();
       queue=queue.map(c=>{ const n=BYID[c.id]; if(!n) return c; if(!c._re) return n;
         const rc=Object.create(n); rc._re=c._re; rc._at=c._at; rc._day=c._day; return rc; });
     }
-    const st=await stP, stBad=st.find(x=>x.status==='rejected');
+    const [st, ucR]=await Promise.all([stP, ucP]), stBad=st.find(x=>x.status==='rejected');
+    const ucCh = !!(ucR && ucMergeIn(ucR.cards, {server:true}));
+    if(ucCh) ucInject();
     const stFresh=st.map((x,i)=>x.status==='fulfilled' && store.ack(H, stDocs[i]));
     const [sc, fb, sess, wk, ...pwl] = st.map(x=>x.status==='fulfilled' ? x.value : null);
     let pwNew=false;
@@ -5500,7 +5671,7 @@ async function refreshRemote(){
       if(logWeeks[w].length!==n0 || Object.keys(logDel[w]||{}).length!==d0){ pwNew=true; logCacheSet(w, weekFile(w)); }
       if(delBehind(w, j)) markDirty('log', w); }
     if(st.slice(4).every(x=>x.status==='fulfilled')) refreshWk=tw;
-    if(sc||fb||sess||wk||pwNew){
+    if(sc||fb||sess||wk||pwNew||ucCh){
       if(sc){ mergeMarksInto(sc); if(stFresh[0]) reapMarks(sc); }
       if(fb){ mergeFbInto(fb); if(stFresh[1]) reapFb(fb); }
       if(wk){ mergeLogInto(wk, tw); if(delBehind(tw, wk)) markDirty('log', tw); } else rebuildLog();
@@ -5704,7 +5875,8 @@ function elemParent(c){ if(_elemParData!==DATA){ _elemPar=new Map(); _elemParDat
     for(const p of DATA) if(Array.isArray(p.elems)) for(const id of p.elems) if(id!==p.id && !_elemPar.has(id)) _elemPar.set(id,p); }
   return _elemPar.get(c.id)||null; }
 const SCENE_LAST=1e7;
-function newRank(c){ return planRank(tagKey(c)) + (c.typ==='장면' ? SCENE_LAST : 0); }
+function newRank(c){ if(c._uc) return -1e9 + c._i;
+  return planRank(tagKey(c)) + (c.typ==='장면' ? SCENE_LAST : 0); }
 function newSort(a,b){ return newRank(a)-newRank(b) || a._i-b._i; }
 function hoedokStamp(k){ (state.hoedokAt||(state.hoedokAt={}))[k]=new Date().toISOString(); }
 function markHoedok(k){ if(!state.hoedok)state.hoedok={};
@@ -5883,6 +6055,11 @@ async function loadData(){
     }
   }
   }
+  DECK=DATA; DATA=DECK.concat(UC_LOADED ? ucLiveIds().map(id=>ucCard(id, UC[id])) : []);
+  dataIndex();
+}
+let DECK=[];
+function dataIndex(){
   BYID=Object.create(null); const tags=new Set(), typs=new Set();
   DATA.forEach((c,i)=>{ c._i=i; BYID[c.id]=c; (c.tags||[]).forEach(t=>tags.add(t)); typs.add(c.typ); });
   ALLTAGS=[...tags].sort(); ALLTYPS=[...typs].sort();
@@ -5984,6 +6161,7 @@ async function loadAllBody(){
     }
     normalizeSessions();
   }
+  await ucBoot();
   rebuildLog();
   if(!state.cards)state.cards={}; if(!state.hoedok)state.hoedok={};
   {
@@ -6167,6 +6345,7 @@ function refillSess(sx){
   const fresh=buildQueue(asPreset(sx), sx.how.status, keep.map(id=>BYID[id]).filter(Boolean)).map(c=>c.id).filter(id=>!delToday(id));
   const have=new Set(keep);
   sx.q=[...keep, ...fresh.filter(id=>!have.has(id))];
+  { const u=sx.q.filter(id=>isUcId(id) && BYID[id] && isNew(BYID[id])); if(u.length){ const us=new Set(u); sx.q=[...u, ...sx.q.filter(id=>!us.has(id))]; } }
   const same = sx.q.length===q0.length && sx.q.every((id,i)=>id===q0[i]) && b0===basisKey();
   sx.day=todayKey(); if(!same){ sx.fillAt=Date.now(); sx.basis=basisKey(); saveSessionsSoon(); }
   if(curSess&&curSess.id===sx.id){
@@ -7021,7 +7200,7 @@ function fillBack(c){
     box.innerHTML=c.items.map((it,i)=>`<div class="it-row">${ordered?`<span class="it-ord">${i+1}</span>`:''}<span class="xm">✕</span><span>${esc(it)}</span></div>`).join(''); }
   const n=$('cNote'); n.classList.toggle('on',!!c.note); n.innerHTML=c.note?'<b>보충</b>'+noteHtml(c.note):'';
   const sc=$('cSrc'); sc.classList.toggle('on',!!c.src); sc.textContent=c.src?'출처 '+c.src:'';
-  $('cTyp').textContent=c.typ||'';
+  $('cTyp').textContent=c._uc?'내 카드':(c.typ||'');
   $('cDir').style.display = isRev(c)?'inline-block':'none';
   $('cHint').textContent = isTbl ? '표 답 — 위 표를 채워 보고 대조'
     : isDiag ? '그림 답 — 정리 노트와 대조해 스스로 채점'
@@ -7058,7 +7237,7 @@ function reveal(){
   if(c.note)n.innerHTML='<b>보충</b>'+noteHtml(c.note);
   const sc=$('cSrc'); sc.classList.toggle('on',!!c.src);
   sc.textContent = c.src ? '출처 '+c.src : '';
-  $('cTyp').textContent=c.typ;
+  $('cTyp').textContent=c._uc?'내 카드':c.typ;
   $('cDir').style.display = isRev(c)?'inline-block':'none';
   renderTable(c,true);
   showDiag(c,true);
@@ -7748,7 +7927,7 @@ function renderNotes(){
   if(store.name==='local' && !off.login) rows.push(`<div class="nt-row">${IC('<rect x="2.5" y="5" width="12" height="9" rx="1.5"/><rect x="16" y="8" width="5.5" height="11" rx="1.2"/><path d="M5 18h8"/>','var(--c-acc)')}<span class="gr-b"><span class="gr-t">이 기기에만 저장</span></span><button class="nt-go" id="ntLogin">로그인</button>${X('login')}</div>`);
   box.className=rows.length?'grp h-notes':''; box.innerHTML=rows.join('');
   box.querySelectorAll('[data-nx]').forEach(b=>b.onclick=()=>noteHide(b.dataset.nx, b.dataset.nx==='backup'?now+7*86400000:1));
-  const bk=$('ntBackup'); if(bk) bk.onclick=()=>{ exportBackup(); renderNotes(); };
+  const bk=$('ntBackup'); if(bk) bk.onclick=()=>{ exportBackup().then(renderNotes, ()=>toast('백업 실패')); };
   const lg=$('ntLogin'); if(lg) lg.onclick=()=>openSetup();
 }
 function renderSessRows(){
@@ -8721,16 +8900,30 @@ $('tabToday').onclick=()=>{ const w=document.querySelector('#scrHome .home-wrap'
 { const openNotes=()=>window.open(NOTES_SITE,'_blank','noopener'); $('hsHd').onclick=openNotes; $('tabHd').onclick=openNotes; }
 $('ssEdit').onclick=()=>{ if(viewSess)openSessEditor(viewSess,null); };
 $('btnSync').onclick=async()=>{ if(store.name==='local'){ cacheFlush(); toast('이 기기에 저장됨 · 로그인하면 기기 사이 연동'); return; } if(!store.linked()){openSetup();return;} await push(true); if(!dirty)toast('저장 완료'); };
-function exportBackup(){
+async function ucPhBundle(cards, fetch){
+  const out={}; let miss=0; const refs=new Set();
+  for(const id in cards){ const b=cards[id]; if(b && !b.del && Array.isArray(b.ph)) for(const x of b.ph) if(x && UC_PID_RE.test(x.p)) refs.add(x.p); }
+  for(const pid of refs){
+    let x=await ucPhGetLocal(pid);
+    if(!x && fetch){ await ucPhEnsure(pid); x=await ucPhGetLocal(pid); }
+    if(!x){ miss++; continue; }
+    const by=new Uint8Array(x.a); let bin=''; for(let i=0;i<by.length;i+=8192) bin+=String.fromCharCode.apply(null, by.subarray(i,i+8192));
+    out[pid]='data:image/jpeg;base64,'+btoa(bin);
+  }
+  if(miss) Object.defineProperty(out, 'miss', {value:miss, enumerable:false});
+  return out;
+}
+async function exportBackup(){
   const parts=splitState(), logs={};
   for(const w of Object.keys(logWeeks).sort()){ const f=weekFile(w); if(f.log.length || f.del) logs[w]=f; }
-  const bundle={ kind:'cards-backup', v:3, app:APP_HASH||'', at:new Date().toISOString(), marks:parts.marks, fb:parts.fb, sess:sessFile(), logs };
+  const ph=await ucPhBundle(UC, true);
+  const bundle={ kind:'cards-backup', v:3, app:APP_HASH||'', at:new Date().toISOString(), marks:parts.marks, fb:parts.fb, sess:sessFile(), logs, uc:{v:1, cards:UC}, ph };
   const blob=new Blob([JSON.stringify(bundle)],{type:'application/json'});
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download=`카드-백업-${todayKey()}.json`; a.click();
   lsSet('cards_backup_at_v1', JSON.stringify({at:Date.now(), n:state.log.length}));
   setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
-  toast('백업 파일 내려받음 — '+a.download);
+  toast('백업 파일 내려받음 — '+a.download + (ph.miss ? ` · 사진 ${ph.miss}장 못 받음` : ''));
 }
 function backupOk(j){ return !!(j && typeof j==='object' && (j.v===3 && j.kind==='cards-backup' || j.v===2) && j.logs && typeof j.logs==='object'); }
 function backupFbClean(fb){
@@ -8748,9 +8941,28 @@ function backupSessClean(ss){
   if(ss.rest && typeof ss.rest==='object'){ for(const k of ['days','skip']) if(ss.rest[k]!==undefined) ss.rest[k]=Array.isArray(ss.rest[k]) ? ss.rest[k].filter(dk) : []; }
   if(ss.exam!==undefined && !(ss.exam===null || dk(ss.exam))) delete ss.exam;
 }
+async function ucImportPhotos(j, ids){
+  const ph=(j && j.ph && typeof j.ph==='object') ? j.ph : {}; let got=0, skip=0;
+  const want=new Set(); for(const id of ids){ const b=UC[id]; if(b && !b.del && b.ph) for(const x of b.ph) want.add(x.p); }
+  for(const pid of want){
+    if(await ucPhGetLocal(pid)) continue;
+    const d=ph[pid];
+    if(typeof d!=='string' || !/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(d) || d.length>550000){ skip++; continue; }
+    if(ucPhRefs().size>UC_PH_MAX){ skip++; continue; }
+    try{ const blob=await (await fetch(d)).blob(); const r=await ucShrink(new File([blob], 'b.jpg', {type:blob.type}));
+      const a=await r.b.arrayBuffer(); await ucPhPutLocal(pid, a, 'image/jpeg', 0); ucPhPend.add(pid); got++; }
+    catch(e){ skip++; }
+  }
+  return {got, skip};
+}
 function importBackup(j){
   if(!backupOk(j)) throw new Error('not a backup');
   const n0=state.log.length;
+  let ucIds=[];
+  if(j.uc && j.uc.cards && typeof j.uc.cards==='object'){ const before=JSON.stringify(UC);
+    for(const id of Object.keys(j.uc.cards)){ if(!isUcId(id)) continue; const x=ucClean(j.uc.cards[id]); if(!x) continue; if(ucWins(x, UC[id])){ UC[id]=x; ucIds.push(id); } }
+    if(JSON.stringify(UC)!==before){ ucSave(); ucInject(); ucMarkDirty(); }
+    if(ucIds.length) ucImportPhotos(j, ucIds).then(r=>{ if(r.got){ ucMarkDirty(); if(store.linked()) push(true); } if(r.skip) toast(`사진 ${r.skip}장 못 가져옴`); renderCardSheetIfOpen(); }); }
   for(const w of Object.keys(j.logs)){
     if(!/^\d{4}-W\d{2}$/.test(w)) continue;
     const x=j.logs[w], arr=Array.isArray(x) ? x : (x && x.log);
@@ -8769,16 +8981,18 @@ function importBackup(j){
   for(const sx of sessions){ if(!isFixed(sx)) sx.day=''; }
   renderHome();
   if(store.linked()) push(true);
+  importBackup.uc=ucIds.length;
   return state.log.length-n0;
 }
-$('btnBackup').onclick=exportBackup;
+function renderCardSheetIfOpen(){ if($('ovlCard').classList.contains('show') && csCard){ const n=BYID[csCard.id]; if(n){ csCard=n; renderCardSheet(); } } }
+$('btnBackup').onclick=()=>{ exportBackup().catch(e=>{ console.warn(e); toast('백업 실패'); }); };
 $('btnRestore').onclick=()=>$('restoreFile').click();
 $('restoreFile').onchange=async(ev)=>{
   const f=ev.target.files&&ev.target.files[0]; ev.target.value=''; if(!f) return;
   let j=null; try{ j=JSON.parse(await f.text()); }catch(e){}
   if(!backupOk(j)){ toast('백업 파일이 아님'); return; }
   askConfirm('백업 가져오기', `${(j.at||'').slice(0,10)} 백업을 지금 기록과 합칩니다. 덮어쓰지 않습니다.`, '가져오기',
-    ()=>{ try{ const n=importBackup(j); toast(`가져옴 — 채점 ${n.toLocaleString()}건 늘어남`); }catch(e){ console.warn(e); toast('가져오기 실패'); } });
+    ()=>{ try{ const n=importBackup(j); toast(`가져옴 — 채점 ${n.toLocaleString()}건 늘어남`+(importBackup.uc?` · 내 카드 ${importBackup.uc}장`:'')); }catch(e){ console.warn(e); toast('가져오기 실패'); } });
 };
 $('btnSetup').onclick=openSetup;
 $('tglSwipe').onclick=()=>{ swipeOn=!swipeOn; lsSet(K_SWIPE,swipeOn?'1':'0'); $('tglSwipe').classList.toggle('on',swipeOn); };
@@ -9187,7 +9401,7 @@ function renderCardSheet(){
       const base = dk<=todayKey()? '오늘 (밀림)' : (dd<=0?'오늘':dd+'일 뒤');
       return ek===dk ? base : `${base} → 실제 ${ek.slice(5).replace('-','/')}`; })() : '—';
   const facts=[];
-  facts.push(`<span class="f">${esc(c.typ)}</span>`);
+  facts.push(`<span class="f">${esc(c._uc?'내 카드 · '+c.typ:c.typ)}</span>`);
   if(isRev(c)) facts.push('<span class="f">역방향 (쌍의 파생)</span>');
   if(!f) facts.push('<span class="f">새 카드</span>');
   else{
@@ -9236,7 +9450,7 @@ function renderCardSheet(){
       :'<div class="cs-hist"><div class="cs-hrow">아직 푼 적 없음</div></div>'}
     <div class="cs-sec">조작</div>
     <div class="cs-acts">
-      <button class="cs-act" id="csSolve">지금 이 카드 풀기</button>
+      ${c._uc?'<button class="cs-act" id="csUcEdit">고치기</button>':''}<button class="cs-act" id="csSolve">지금 이 카드 풀기</button>
       <button class="cs-act ${s.flag!=null?'on':''}" id="csFlag">${s.flag!=null?'플래그 해제':'플래그'}</button>
       <button class="cs-act ${buried(c)?'on':''}" id="csBury">${buried(c)?'내일로 취소':'내일로'}</button>
       <button class="cs-act ${s.retired?'on':''}" id="csRetire">${s.retired?'다시 켜기':'끄기'}</button>
@@ -9268,6 +9482,7 @@ function renderCardSheet(){
   const mb=$('csMemoSave'); if(mb)mb.onclick=()=>{ setFlag(c,$('csMemo').value); toast('메모 저장'); };
   $('csBury').onclick=()=>{ buried(c)?unburyCard(c):buryCard(c); rr(); };
   $('csRetire').onclick=()=>{ offCard(c, !(state.cards[c.id]||{}).retired); rr(); };
+  { const eb=$('csUcEdit'); if(eb) eb.onclick=()=>openUcEditor(c.id); }
   $('csSolve').onclick=()=>{ closeCardSheet(); startAdHoc([c], '카드 1장', null, true); };
   $('csDueSet').onclick=()=>{ const n=+$('csDueN').value;
     if(!$('csDueN').value.trim()||!isFinite(n)||n<0){ toast('며칠 뒤인지 숫자로'); return; }
@@ -9302,6 +9517,7 @@ const LIST_CONDS=[
   {g:'오늘',   k:'due',     n:'복습 예정', f:c=>dueTodayParts(true).ids.has(c.id)},
   {g:'오늘',   k:'buried',  n:'내일로 뺀', f:c=>buried(c)},
   {g:'정리',   k:'retired', n:'끈 카드',   f:c=>retired(c), ret:true},
+  {g:'내 카드', k:'mine',   n:'내 카드',   f:c=>!!c._uc},
 ];
 function renderListHome(){
   const LR=lastRevMap(), tk=todayKey(), cnt={};
@@ -9320,7 +9536,8 @@ function renderListHome(){
     buried:['var(--c-indigo)','<circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/>']};
   const tile=(k)=>{ const x=LIST_CONDS.find(y=>y.k===k); if(!x) return ''; const n=cnt[k]||0, ic=LH_IC[k]||['var(--c-acc)','<circle cx="12" cy="12" r="8"/>'];
     return `<button class="lh-tile${n?'':' zero'}" data-k="${esc(k)}"${n?'':' disabled'}><span class="lh-ic" style="background:${ic[0]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic[1]}</svg></span><span class="l">${esc(x.n)}</span><span class="n">${n.toLocaleString()}</span></button>`; };
-  let h=`<div class="lh-grid lh-main">${['due','leech','forgot','retired'].map(tile).join('')}</div>`
+  let h=`<button class="gr-row lh-mine" id="lhMine"><span class="gr-ic" style="background:var(--c-green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg></span><span class="gr-b"><span class="gr-t">내 카드</span></span><span class="gr-v">${(cnt.mine||0).toLocaleString()}</span></button>`
+    +`<div class="lh-grid lh-main">${['due','leech','forgot','retired'].map(tile).join('')}</div>`
        +`<div class="lh-grid">${['flag','ann','today','buried'].map(tile).join('')}</div>`;
   h+=`<button class="gr-row lh-units" id="lhUnits"><span class="gr-ic" style="background:var(--c-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></span><span class="gr-b"><span class="gr-t">단위로 보기</span><span class="gr-s">과목 → 단위 · 복습 · 새 카드 · 세션에 넣기</span></span><svg class="s2-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 6 6-6 6"/></svg></button>`;
   const box=$('listHome'); box.innerHTML=h;
@@ -9330,6 +9547,7 @@ function renderListHome(){
     renderList(true);
   });
   $('lhUnits').onclick=()=>go('scrUnits');
+  $('lhMine').onclick=()=>{ listCond='mine'; $('qSort').value='doc'; renderList(true); };
 }
 const picked=new Set();
 const RATE_NAME={1:'다시',2:'어려움',3:'알맞음',4:'쉬움'};
@@ -9358,8 +9576,9 @@ function cardRow(c, extraMeta){
   const s=state.cards[c.id];
   const el=document.createElement('div'); el.className='lrow';
   const r=s&&s.fsrs?retrievability(s.fsrs):null;
-  el.innerHTML=`<div class="lf">${esc(c.front)}</div><div class="lb">→ ${esc(c.back)}</div>
-    <div class="lmeta"><span class="m">${esc(c.typ)}</span>${isRev(c)?'<span class="m">역방향</span>':''}
+  const ph=c._uc&&c.img?c.img.length:0;
+  el.innerHTML=`<div class="lf">${esc(c.front)||(ph?'<span class="uc-ph-n">사진</span>':'')}</div><div class="lb">→ ${esc(c.back)}</div>
+    <div class="lmeta"><span class="m">${esc(c._uc?'내 카드':c.typ)}</span>${isRev(c)?'<span class="m">역방향</span>':''}
     ${s&&s.fsrs?`<span class="m">S ${s.fsrs.stability.toFixed(1)}일</span><span class="m">R ${r!=null?Math.round(r*100)+'%':'—'}</span>`:'<span class="m">새 카드</span>'}
     ${s&&s.miss?`<span class="m warn">틀림 ${s.miss}</span>`:''}
     ${isLeech(c)?'<span class="m warn">⚠ 자꾸 틀림</span>':''}
@@ -9476,7 +9695,9 @@ function renderList(reset){
   }
   listShown+=page.length;
   $('listMore').style.display = listShown<rows.length?'block':'none';
-  if(!rows.length)body.innerHTML=`<div class="empty-note">${todayOnly?'오늘 푼 카드 아직 없음':'해당하는 카드 없음'}</div>`;
+  if(!rows.length)body.innerHTML = (cond&&cond.k==='mine'&&!raw) ? `<div class="uc-empty"><b>내 카드 없음</b><button class="uc-chip" id="ucEmptyNew">새 카드</button></div>`
+    : `<div class="empty-note">${todayOnly?'오늘 푼 카드 아직 없음':'해당하는 카드 없음'}</div>`;
+  { const b=$('ucEmptyNew'); if(b) b.onclick=()=>openUcEditor(null); }
 }
 function refreshList(){
   const body=$('scrList').querySelector('.sub-body'), sc=body.scrollTop, want=listShown;
@@ -10464,19 +10685,19 @@ $('acGoogle').onclick=()=>SbAuth.signIn('google');
 $('acKakao').onclick=()=>SbAuth.signIn('kakao');
 $('acLink').onclick=async()=>{ try{ await SbAuth.link($('acLink').dataset.p); }catch(e){ acErr('연결 실패 — '+(e&&e.status?('서버 '+e.status):'네트워크 확인')); } };
 $('acClose').onclick=()=>$('ovlAccount').classList.remove('show');
-$('acOutBtn').onclick=()=>{ $('loDesc').textContent = hasPending() ? '아직 못 올린 기록이 있습니다. 지우면 그 기록은 사라집니다.' : '이 기기에 남은 기록을 지울지 고릅니다.';
+$('acOutBtn').onclick=()=>{ $('loDesc').textContent = (hasPending() || ucUnsent()) ? '아직 못 올린 기록이 있습니다. 지우면 그 기록은 사라집니다.' : '이 기기에 남은 기록을 지울지 고릅니다.';
   $('ovlLogout').classList.add('show'); };
 $('loNo').onclick=()=>$('ovlLogout').classList.remove('show');
 $('loKeep').onclick=()=>sbLogout(false);
 $('loWipe').onclick=()=>sbLogout(true);
 $('acDel').onclick=()=>askConfirm('탈퇴', '서버의 기록과 계정을 지우고, 이 기기의 기록도 지웁니다. 되돌릴 수 없습니다. 먼저 백업 파일을 내보내 두기를 권합니다.', '탈퇴',
-  async()=>{ try{ await sbDeleteAccount(); }catch(e){ showBanner('탈퇴 실패 — 네트워크 확인 뒤 다시', false); } });
+  async()=>{ try{ await sbDeleteAccount(); }catch(e){ showBanner(e && e.message==='photos' ? '탈퇴 멈춤 — 사진을 다 못 지움 · 다시 시도' : '탈퇴 실패 — 네트워크 확인 뒤 다시', false); } });
 let sbLocalSessIds=[];
 async function sbAfterLogin(rd){
   if(rd && rd.owner && rd.owner!==rd.uid){
     lsSet(K_SBSWITCH, String(Date.now())); booted=false; lsSet(K_SBSIGNAL, String(Date.now()));
     await new Promise(r=>setTimeout(r, 300));
-    let bk=false; if(lsGet(K_DIRTY) || lsGet(K_DLOGS)){ try{ await sbBackupNow(); bk=true; }catch(e){} }
+    let bk=false; if(lsGet(K_DIRTY) || lsGet(K_DLOGS) || lsGet(K_UCDIRTY) || (await ucPhPendScan()).size){ try{ await sbBackupNow(); bk=true; }catch(e){} }
     await wipeDeviceRecords(rd.uid); lsSet(K_SBOWNER, rd.uid); sbLocalSessIds=[]; rd.foreign=true; lsDel(K_SBSWITCH);
     try{ sessionStorage.setItem('cards_foreign_note', '1'); }catch(e){}
     if(!bk){ location.reload(); await new Promise(()=>{}); }
@@ -10507,7 +10728,9 @@ async function sbBackupNow(){
   const logs={};
   for(const k of await idbKeys()){ const x=String(k); if(!x.startsWith(K_LOGP)) continue; const v=await idbGet(k); if(v&&Array.isArray(v.log)) logs[x.slice(K_LOGP.length)]=v; }
   for(const w of lsLogWeeks()){ const v=cachedFile(K_LOGP+w); if(v&&Array.isArray(v.log)) logs[w]=v; }
-  const bundle={ kind:'cards-backup', v:3, app:'', at:new Date().toISOString(), marks:cachedFile(K_MARKS)||{v:1,cards:{}}, fb:cachedFile(K_FB)||{v:1,cards:{}}, sess:cachedFile(K_SESS)||{v:1,sessions:[]}, logs };
+  const ucj=cachedFile(K_UC), ucc=(ucj&&ucj.cards)||{};
+  const bundle={ kind:'cards-backup', v:3, app:'', at:new Date().toISOString(), marks:cachedFile(K_MARKS)||{v:1,cards:{}}, fb:cachedFile(K_FB)||{v:1,cards:{}}, sess:cachedFile(K_SESS)||{v:1,sessions:[]}, logs,
+    uc:{v:1, cards:ucc}, ph:await ucPhBundle(ucc, false) };
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([JSON.stringify(bundle)],{type:'application/json'}));
   a.download=`카드-백업-다른계정-${todayKey()}.json`; document.body.appendChild(a); a.click(); a.remove();
 }
@@ -10516,7 +10739,7 @@ async function wipeDeviceRecords(keepUid){
   const ks=[]; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k && k.startsWith('cards_') && !KEEP_LS.includes(k) && !(keepUid && k==='cards_sb_auth_v1')) ks.push(k); } }catch(e){}
   ks.forEach(k=>lsDel(k));
   for(const k of await idbKeys()){ const x=String(k); if(keepUid && x.startsWith('sb_'+keepUid+'_')) continue;
-    if(x.startsWith(K_LOGP) || x.startsWith('sb_')) await idbDel(k); }
+    if(x.startsWith(K_LOGP) || x.startsWith('sb_') || x.startsWith('uph:')) await idbDel(k); }
 }
 async function sbLogout(wipeLocal){
   $('ovlLogout').classList.remove('show');
@@ -10530,6 +10753,10 @@ async function sbLogout(wipeLocal){
   location.reload();
 }
 async function sbDeleteAccount(){
+  if(SupabaseStore.phList){
+    for(let i=0;i<3;i++){ const l=await SupabaseStore.phList(); if(!l.length) break; await SupabaseStore.phDel(l.map(x=>x.p)); if(i===2) throw new Error('photos'); }
+    if((await SupabaseStore.phList()).length) throw new Error('photos');
+  }
   await SupabaseStore.rpc('delete_me', {});
   booted=false; lsSet(K_SBSIGNAL, String(Date.now()));
   const uid=SbAuth.uid(); SbAuth.clear(); await SupabaseStore.wipe(uid); await wipeDeviceRecords();
@@ -10607,11 +10834,356 @@ function toast(m){ const t=$('toast'); t.textContent=m; t.classList.toggle('hi',
   clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),1800); }
 
 
+const K_UC='cards_uc_v1', K_UCPHDEL='cards_uc_phdel_v1', K_UCSWEEP='cards_uc_sweep_v1';
+const UC_MAX=3000, UC_PH_MAX=100, UC_PH_SIDE=4, UC_TXT=2000, UC_IT_MAX=30, UC_PH_BYTES=150*1024, UC_PH_HARD=280*1024;
+const UC_ID_RE=/^u[0-9a-f]{15}$/, UC_PID_RE=/^p[0-9a-f]{16}$/;
+const UC_NUM='①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳';
+let UC={};
+function isUcId(id){ return typeof id==='string' && id.charCodeAt(0)===117 && UC_ID_RE.test(id); }
+function ucHex(n){ const a=new Uint8Array(Math.ceil(n/2)); crypto.getRandomValues(a); return [...a].map(x=>x.toString(16).padStart(2,'0')).join('').slice(0,n); }
+function ucNewId(){ let id; do{ id='u'+ucHex(15); }while(UC[id] || BYID[id]); return id; }
+function ucNewPid(){ return 'p'+ucHex(16); }
+function ucSyncOn(){ return !!(store && store.ucOn && store.ucOn()); }
+function ucClean(b){
+  if(!b || typeof b!=='object' || Array.isArray(b)) return null;
+  const str=(v,n)=>typeof v==='string' ? v.slice(0,n) : '';
+  const u=str(b.u,40); if(!u) return null;
+  if(b.del) return {del:1, u};
+  const s=str(b.s,40); if(!SUBJECTS.includes(s)) return null;
+  const t=['qa','cloze','list'].includes(b.t) ? b.t : null; if(!t) return null;
+  const k=str(b.k,120).trim(); if(!k) return null;
+  const o={v:1, s, k, t, q:str(b.q,UC_TXT), u, c:str(b.c,40)||u};
+  const m=str(b.m,120).trim(); if(m) o.m=m;
+  if(t==='qa' && b.a) o.a=str(b.a,UC_TXT);
+  if(t==='list'){ o.it=(Array.isArray(b.it)?b.it:[]).filter(x=>typeof x==='string' && x.trim()).slice(0,UC_IT_MAX).map(x=>x.trim().slice(0,300)); if(b.o) o.o=1; }
+  if(b.n) o.n=str(b.n,UC_TXT);
+  const ph=(Array.isArray(b.ph)?b.ph:[]).filter(x=>x && UC_PID_RE.test(x.p) && (x.on==='f'||x.on==='b'));
+  const seen=new Set(), pk=[]; for(const x of ph){ if(seen.has(x.p)) continue; seen.add(x.p); if(pk.filter(y=>y.on===x.on).length<UC_PH_SIDE) pk.push({p:x.p, on:x.on}); }
+  if(pk.length) o.ph=pk;
+  return o;
+}
+function ucLoad(){ let j=null; try{ j=JSON.parse(lsGet(K_UC)||'null'); }catch(e){}
+  const src=(j && j.cards && typeof j.cards==='object') ? j.cards : {}; UC={};
+  for(const id in src){ if(!isUcId(id)) continue; const x=ucClean(src[id]); if(x) UC[id]=x; } }
+function ucFromStored(){ let j=null; try{ j=JSON.parse(lsGet(K_UC)||'null'); }catch(e){} let ch=false;
+  const st=(j && j.cards && typeof j.cards==='object') ? j.cards : {}; for(const id in st){ if(!isUcId(id)) continue; const x=ucClean(st[id]); if(x && ucWins(x, UC[id])){ UC[id]=x; ch=true; } } return ch; }
+function ucSave(){ ucFromStored();
+  if(!lsSet(K_UC, JSON.stringify({v:1, cards:UC}))) showBanner('저장 공간 부족 — 이 기기에 내 카드를 못 남김 · 로그인하거나 백업 파일 내보내기', false); }
+try{ window.addEventListener('storage', e=>{ if(e.key!==K_UC || !UC_LOADED || !booted) return; if(ucFromStored()){ ucInject(); ucAfterChange(); } }); }catch(e){}
+const K_UCDIRTY='cards_uc_dirty_v1';
+function ucMarkDirty(){ lsSet(K_UCDIRTY, '1'); markDirty('uc'); }
+let ucPhPend=new Set();
+async function ucPhPendScan(){ const out=new Set(); try{ for(const k of await idbKeys()){ const x=String(k); if(!x.startsWith('uph:')) continue; const v=await idbGet(k); if(v && !v.up) out.add(x.slice(4)); } }catch(e){} return out; }
+function ucUnsent(){ return !!lsGet(K_UCDIRTY) || ucPhPend.size>0; }
+function ucWins(a, b){ if(!a) return false; if(!b) return true; if(b.del) return false; if(a.del) return true; return (a.u||'') > (b.u||''); }
+function ucParseCloze(q){
+  const ans=[];
+  const front=String(q||'').replace(/\[\[([\s\S]*?)\]\]/g, (m0, x)=>{ const i=ans.length; if(i>=UC_NUM.length || !x.trim()) return x; ans.push(x.trim()); return '('+UC_NUM[i]+' )'; });
+  return {front, back:ans.map((a,i)=>UC_NUM[i]+' '+a).join(' '), n:ans.length};
+}
+function ucCard(id, b){
+  const tags=[b.k]; if(b.m) tags.push(b.m);
+  const c={id, subj:b.s, node:[b.s, b.k, b.m].filter(Boolean).join('/'), tags, _uc:1};
+  if(b.t==='cloze'){ const z=ucParseCloze(b.q); c.typ='빈칸'; c.front=z.front; c.back=z.back; }
+  else if(b.t==='list'){ c.typ=b.o?'단계':'구성'; c.front=b.q||''; c.items=(b.it||[]).slice(); c.back=c.items.join(' / '); }
+  else { c.typ='묻고 답'; c.front=b.q||''; c.back=b.a||''; }
+  if(c.front.charAt(0)==='〔') c.front='​'+c.front;
+  if(b.n) c.note=b.n;
+  if(b.ph && b.ph.length) c.img=b.ph.map(x=>({p:'uph:'+x.p, on:x.on, alt:'사진'}));
+  return c;
+}
+function ucLiveIds(){ return Object.keys(UC).filter(id=>UC[id] && !UC[id].del).sort((a,b)=>((UC[a].c||'')<(UC[b].c||'')?-1:(UC[a].c||'')>(UC[b].c||'')?1:(a<b?-1:1))); }
+function ucCount(){ return ucLiveIds().length; }
+function ucInject(){
+  DATA=DECK.concat(ucLiveIds().map(id=>ucCard(id, UC[id]))); dataIndex();
+  queue=queue.map(c=>{ const n=BYID[c.id]; if(!n) return c; if(!c._re) return n;
+    const rc=Object.create(n); rc._re=c._re; rc._at=c._at; rc._day=c._day; return rc; });
+  try{ restReset(); }catch(e){}
+  lastRevIdx=null; firstRevIdx=null;
+}
+function ucMergeIn(remoteCards, o){
+  const rc=(remoteCards && typeof remoteCards==='object') ? remoteCards : {};
+  let ch=false, ahead=false; const gone=[];
+  for(const id in rc){ if(!isUcId(id)) continue; const x=ucClean(rc[id]); if(!x) continue;
+    if(ucWins(x, UC[id])){ if(x.del && UC[id] && !UC[id].del) gone.push(id); UC[id]=x; ch=true; } }
+  if(o && o.server) for(const id in UC){ const x=rc[id] ? ucClean(rc[id]) : null; if(!x || ucWins(UC[id], x)) ahead=true; }
+  for(const id of gone){ if(state.cards[id]){ delete state.cards[id]; } }
+  if(ch){ ucSave(); ucPhGc(); }
+  if(ahead && UC_LOADED) ucMarkDirty();
+  return ch;
+}
+let UC_LOADED=false;
+async function ucBoot(){
+  ucLoad(); UC_LOADED=true; ucPhPend=await ucPhPendScan();
+  if(ucSyncOn()){ try{ const r=await store.get('uc'); if(r) ucMergeIn(r.cards, {server:true}); }catch(e){ console.warn('[내 카드] 받기 실패 — 기기 사본으로', e); } }
+  if(lsGet(K_UCDIRTY) || ucPhPend.size) markDirty('uc');
+  ucInject();
+}
+
+const UPH_URL=new Map(), UPH_WAIT=new Map();
+const UPH_BLANK='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+async function ucPhGetLocal(pid){ const x=await idbGet('uph:'+pid); return (x && x.a) ? x : null; }
+async function ucPhPutLocal(pid, a, t, up){ return idbSet('uph:'+pid, {a, t:t||'image/jpeg', up:up?1:0}); }
+function ucPhUrlFrom(pid, a, t){ const old=UPH_URL.get(pid); if(old) return old; const u=URL.createObjectURL(new Blob([a], {type:t||'image/jpeg'})); UPH_URL.set(pid, u); return u; }
+function ucPhEnsure(pid){
+  if(UPH_URL.has(pid)) return Promise.resolve(UPH_URL.get(pid));
+  if(UPH_WAIT.has(pid)) return UPH_WAIT.get(pid);
+  const p=(async()=>{
+    const x=await ucPhGetLocal(pid); if(x) return ucPhUrlFrom(pid, x.a, x.t);
+    if(!ucSyncOn() || !store.phGet) return null;
+    try{ const b=await store.phGet(pid); if(!b) return null; const a=await b.arrayBuffer();
+      await ucPhPutLocal(pid, a, 'image/jpeg', 1); return ucPhUrlFrom(pid, a, 'image/jpeg'); }catch(e){ return null; }
+  })().finally(()=>UPH_WAIT.delete(pid));
+  UPH_WAIT.set(pid, p);
+  p.then(u=>{ if(!u) return; document.querySelectorAll('img[data-uph="'+pid+'"]').forEach(im=>{ im.classList.remove('err'); const n=im.nextElementSibling; if(n && n.classList.contains('c-alt')) n.remove(); im.style.display=''; im.src=u; }); });
+  return p;
+}
+function ucPidOf(p){ const m=/^uph:(p[0-9a-f]{16})$/.exec(String(p||'')); return m ? m[1] : ''; }
+function ucPhRefs(){ const s=new Set(); for(const id in UC){ const b=UC[id]; if(b && !b.del && b.ph) for(const x of b.ph) s.add(x.p); } return s; }
+async function ucPhGc(){
+  try{ const refs=ucPhRefs(); if(ucE) for(const x of ucE.ph) refs.add(x.p);
+    for(const k of await idbKeys()){ const x=String(k); if(!x.startsWith('uph:')) continue; const pid=x.slice(4);
+      if(!refs.has(pid)){ await idbDel(k); const u=UPH_URL.get(pid); if(u){ URL.revokeObjectURL(u); UPH_URL.delete(pid); } } } }catch(e){}
+}
+let ucCapWarned=false;
+async function ucPushPhotos(){
+  const refs=ucPhRefs();
+  for(const k of await idbKeys()){ const x=String(k); if(!x.startsWith('uph:')) continue; const pid=x.slice(4);
+    if(!refs.has(pid)) continue;
+    const v=await idbGet(k); if(!v || v.up || !v.a) continue;
+    try{ await store.phUp(pid, v.a); await ucPhPutLocal(pid, v.a, v.t, 1); ucPhPend.delete(pid); }
+    catch(e){ if(e && e.code==='cap'){ if(!ucCapWarned){ ucCapWarned=true; toast('사진 한도 — 100장'); lsDel(K_UCSWEEP); setTimeout(ucPhSweep, 3000); } continue; } throw e; }
+  }
+}
+async function ucPhSweep(){
+  if(!booted || !ucSyncOn() || !store.phList || dirtyFiles.has('uc') || ucPhPend.size) return;
+  if(lsGet(K_UCSWEEP)===todayKey()) return;
+  try{ const r=await store.get('uc'); if(r && ucMergeIn(r.cards, {server:true})){ ucInject(); replayLog(); ucAfterChange(); }
+    if(dirtyFiles.has('uc')) return;
+    const refs=ucPhRefs(); if(ucE) for(const x of ucE.ph) refs.add(x.p);
+    const list=await store.phList(), old=Date.now()-2*86400000;
+    const dead=list.filter(x=>!refs.has(x.p) && (Date.parse(x.t||'')||0) < old).map(x=>x.p);
+    if(dead.length) await store.phDel(dead);
+    lsSet(K_UCSWEEP, todayKey());
+  }catch(e){ console.warn('[내 카드] 사진 치우기 실패', e); }
+}
+async function ucPhPrefetch(){ if(!ucSyncOn()) return; for(const pid of ucPhRefs()){ if(UPH_URL.has(pid) || await ucPhGetLocal(pid)) continue; await ucPhEnsure(pid); } }
+async function ucShrink(file){
+  if(!file || file.size>40*1024*1024) throw {code:'size'};
+  const url=URL.createObjectURL(file); let img;
+  try{ img=new Image(); img.decoding='async';
+    await new Promise((ok, no)=>{ img.onload=ok; img.onerror=no; img.src=url; }); }
+  catch(e){ URL.revokeObjectURL(url); throw {code:'notimg'}; }
+  const W=img.naturalWidth, H=img.naturalHeight; if(!W || !H){ URL.revokeObjectURL(url); throw {code:'notimg'}; }
+  const tries=[];
+  try{
+    for(const L of [1200, 1000, 800]){
+      const s=Math.min(1, L/Math.max(W,H)), w=Math.max(1,Math.round(W*s)), h=Math.max(1,Math.round(H*s));
+      const cv=document.createElement('canvas'); cv.width=w; cv.height=h; const g=cv.getContext('2d');
+      g.fillStyle='#fff'; g.fillRect(0,0,w,h); g.drawImage(img, 0, 0, w, h);
+      let small=null;
+      for(const q of [0.82, 0.74, 0.66, 0.58, 0.5]){
+        const b=await new Promise(r=>cv.toBlob(r, 'image/jpeg', q)); if(!b) continue;
+        if(!small || b.size<small.b.size) small={b, w, h, q};
+        if(b.size<=UC_PH_BYTES) return {b, w, h, q, src:file.size};
+      }
+      if(small) tries.push(small);
+      if(L===1000 && small && small.b.size<=220*1024) return Object.assign(small, {src:file.size});
+    }
+  }finally{ URL.revokeObjectURL(url); }
+  const best=tries.sort((x,y)=>x.b.size-y.b.size)[0];
+  if(best && best.b.size<=UC_PH_HARD) return Object.assign(best, {src:file.size});
+  throw {code:'size'};
+}
+
+let ucE=null;
+function ucSubjects(){ const s=new Set(); for(const c of DECK) s.add(c.subj); return SUBJECTS.filter(x=>s.has(x)); }
+function ucUnits(subj){
+  const seen=new Set(), out=[];
+  for(const c of DATA){ if(c.subj!==subj) continue; const t=(c.tags||[])[0]; if(t && !seen.has(t)){ seen.add(t); out.push(t); } }
+  return out; }
+function ucMids(subj, unit){ const seen=new Set(), out=[];
+  for(const c of DATA){ if(c.subj!==subj || (c.tags||[])[0]!==unit) continue; const t=(c.tags||[])[1]; if(t && !seen.has(t)){ seen.add(t); out.push(t); } }
+  return out; }
+function ucSubjName(s){ return String(s||'').replace(/^\d+\./,''); }
+function ucFillSelects(){
+  const b=ucE.b, subs=ucSubjects();
+  if(!subs.includes(b.s)) b.s=subs[0]||SUBJECTS[0];
+  $('ucSubj').innerHTML=subs.map(s=>`<option value="${esc(s)}">${esc(ucSubjName(s))}</option>`).join('');
+  $('ucSubj').value=b.s;
+  const us=ucUnits(b.s); if(!us.includes(b.k)) b.k=us[0]||'';
+  $('ucUnit').innerHTML=us.map(u=>`<option value="${esc(u)}">${esc(u)}</option>`).join(''); $('ucUnit').value=b.k;
+  const ms=ucMids(b.s, b.k); if(b.m && !ms.includes(b.m)) ms.unshift(b.m);
+  $('ucMid').innerHTML='<option value="">전체</option>'+ms.map(m=>`<option value="${esc(m)}">${esc(m)}</option>`).join(''); $('ucMid').value=b.m||'';
+  $('ucMidRow').style.display=ms.length?'':'none';
+}
+function ucPhCountAll(){ const s=ucPhRefs(); if(ucE){ for(const x of ucE.ph) s.add(x.p); for(const p of ucE.gone) s.delete(p); } return s.size; }
+function ucRenderPh(){
+  for(const side of ['f','b']){
+    const box=$(side==='f'?'ucPhF':'ucPhB'), list=ucE.ph.filter(x=>x.on===side);
+    let h=list.map(x=>`<div class="pt"><img data-uph="${esc(x.p)}" src="${esc(UPH_URL.get(x.p)||UPH_BLANK)}" alt="사진"><button type="button" class="x" data-rm="${esc(x.p)}" aria-label="사진 빼기"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button></div>`).join('');
+    if(ucE.busy===side) h+='<div class="busy">줄이는 중</div>';
+    const full=ucPhCountAll()>=UC_PH_MAX;
+    if(list.length<UC_PH_SIDE) h+=`<button type="button" class="add" data-add="${side}"${full?' disabled':''} aria-label="사진 넣기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.4"/></svg>${full?'한도':'사진'}</button>`;
+    box.innerHTML=h;
+    list.forEach(x=>{ if(!UPH_URL.get(x.p)) ucPhEnsure(x.p); });
+  }
+  document.querySelectorAll('#ovlUc [data-rm]').forEach(b=>b.onclick=()=>{ const p=b.dataset.rm, x=ucE.ph.find(y=>y.p===p);
+    ucE.ph=ucE.ph.filter(y=>y.p!==p); if(x && x.neu){ idbDel('uph:'+p); } else ucE.gone.push(p); ucRenderPh(); });
+  document.querySelectorAll('#ovlUc [data-add]').forEach(b=>b.onclick=()=>{
+    if(ucPhCountAll()>=UC_PH_MAX){ toast('사진 한도 — 100장'); return; }
+    ucE.side=b.dataset.add; $('ucFile').value=''; $('ucFile').click(); });
+}
+function ucRenderPrev(){
+  const b=ucE.b, t=b.t;
+  if(t==='cloze'){
+    let n=0; const parts=String($('ucQ').value).split(/(\[\[[\s\S]*?\]\])/);
+    const h=parts.map(p=>{ const m=/^\[\[([\s\S]*)\]\]$/.exec(p); if(m && m[1].trim() && n<UC_NUM.length) return `<span class="bk">${UC_NUM[n++]}</span>`; return esc(m?m[1]:p); }).join('');
+    $('ucPrev').innerHTML = n ? h : '';
+    const z=ucParseCloze($('ucQ').value);
+    $('ucAnsPrev').innerHTML = z.n ? z.back.split(/(?=[①-⑳])/).map(s=>`<span class="an">${esc(s.trim())}</span>`).join('') : '';
+  } else if(t==='list'){
+    $('ucPrev').innerHTML='';
+    const it=$('ucIt').value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,UC_IT_MAX);
+    const tag=b.o?'ol':'ul';
+    $('ucAnsPrev').innerHTML = it.length>=2 ? `<${tag}>${it.map(x=>`<li>${esc(x)}</li>`).join('')}</${tag}>` : '';
+  } else { $('ucPrev').innerHTML=''; $('ucAnsPrev').innerHTML=''; }
+}
+function ucRenderType(){
+  const t=ucE.b.t;
+  $('ucType').querySelectorAll('button').forEach(x=>x.classList.toggle('on', x.dataset.v===t));
+  $('ucQLab').textContent = t==='cloze' ? '문장' : '앞면';
+  $('ucClozeTools').style.display = t==='cloze' ? '' : 'none';
+  $('ucA').style.display = t==='qa' ? '' : 'none';
+  $('ucIt').style.display = t==='list' ? '' : 'none';
+  $('ucOrdRow').style.display = t==='list' ? '' : 'none';
+  $('ucALab').textContent = t==='list' ? '항목' : '뒷면';
+  $('ucIt').placeholder = t==='list' ? '한 줄에 하나' : '';
+  $('ucOrd').classList.toggle('on', !!ucE.b.o); $('ucOrd').setAttribute('aria-checked', ucE.b.o?'true':'false');
+  ucRenderPrev();
+}
+function openUcEditor(id, preset){
+  if(!DECK.length) return;
+  if(!id && ucCount()>=UC_MAX){ toast('카드 한도 — 내 카드 '+UC_MAX.toLocaleString()+'장'); return; }
+  const src=id ? UC[id] : null; if(id && (!src || src.del)) return;
+  const b=src ? JSON.parse(JSON.stringify(src)) : {v:1, t:'qa', s:(preset&&preset.s)||(ucE0.s), k:(preset&&preset.k)||ucE0.k, m:'', q:'', a:'', it:[], n:''};
+  ucE={id:id||null, b, ph:(b.ph||[]).map(x=>({p:x.p, on:x.on})), gone:[], busy:null};
+  $('ucTitle').textContent = id ? '카드 고치기' : '새 카드';
+  $('ucDel').style.display = id ? '' : 'none';
+  ucFillSelects();
+  $('ucQ').value = b.q||''; $('ucA').value = b.a||''; $('ucIt').value=(b.it||[]).join('\n'); $('ucN').value=b.n||'';
+  document.querySelectorAll('#ovlUc .bad').forEach(x=>x.classList.remove('bad'));
+  ucRenderType(); ucRenderPh(); ucSelR=null; ucBlankDim();
+  $('ovlUc').classList.add('show'); $('ovlUc').querySelector('.sheet').scrollTop=0; navGuard();
+}
+const ucE0={s:'', k:''};
+function ucCollect(){
+  const b=ucE.b;
+  b.q=$('ucQ').value.replace(/\s+$/,''); b.n=$('ucN').value.trim();
+  if(b.t==='qa') b.a=$('ucA').value.trim(); else delete b.a;
+  if(b.t==='list'){ b.it=$('ucIt').value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,UC_IT_MAX); } else { delete b.it; delete b.o; }
+  if(!b.n) delete b.n; if(!b.m) delete b.m;
+  b.ph=ucE.ph.map(x=>({p:x.p, on:x.on})); if(!b.ph.length) delete b.ph;
+  return b;
+}
+function ucBad(el){ el.classList.add('bad'); setTimeout(()=>el.classList.remove('bad'), 2400); try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){} }
+function ucSaveEditor(){
+  if(ucE.busy){ toast('사진 줄이는 중'); return; }
+  const b=ucCollect(), has=side=>(b.ph||[]).some(x=>x.on===side);
+  if(!b.k){ ucBad($('ucUnit').closest('.uc-grp')); toast('단위 없음'); return; }
+  if(!b.q.trim() && !has('f')){ ucBad($('ucQ')); toast('앞면 비어 있음'); return; }
+  if(b.t==='cloze' && !ucParseCloze(b.q).n){ ucBad($('ucQ')); toast('빈칸 없음 — 가릴 말을 골라 「빈칸」'); return; }
+  if(b.t==='qa' && !b.a && !has('b')){ ucBad($('ucA')); toast('뒷면 비어 있음'); return; }
+  if(b.t==='list' && !(b.it||[]).length){ ucBad($('ucIt')); toast('항목 없음'); return; }
+  const now=new Date().toISOString(), id=ucE.id||ucNewId();
+  b.u=(UC[id] && UC[id].u && UC[id].u>=now) ? new Date(Date.parse(UC[id].u)+1).toISOString() : now;
+  if(!b.c) b.c=now;
+  const clean=ucClean(b); if(!clean){ toast('저장 실패 — 꼴이 맞지 않음'); return; }
+  if(new Blob([JSON.stringify(clean)]).size>12000){ ucBad($('ucQ')); toast('카드가 너무 김 — 한 장 12KB까지'); return; }
+  if(UC[id] && UC[id].del){ toast('다른 기기에서 지운 카드'); $('ovlUc').classList.remove('show'); ucE=null; return; }
+  UC[id]=clean; ucSave();
+  const kept=new Set((clean.ph||[]).map(x=>x.p)), drop=ucE.gone.filter(p=>!kept.has(p));
+  ucE0.s=clean.s; ucE0.k=clean.k;
+  const isNewCard=!ucE.id, neu=ucE.ph.filter(x=>x.neu).map(x=>x.p); ucE=null; $('ovlUc').classList.remove('show');
+  for(const pid of neu) if((clean.ph||[]).some(x=>x.p===pid)) ucPhPend.add(pid);
+  ucInject(); ucPhGc(); ucMarkDirty(); cacheState();
+  if(store.linked()) push();
+  ucAfterChange();
+  if(isNewCard){ const c=BYID[id], hit=c && sessions.filter(sx=>!sx.temp && scopeMatch(c, sx.scope||{}));
+    toast(hit && hit.length ? `저장 — 「${hit[0].name}」에 나옴` : '저장 — 세션 범위 밖'); }
+  else toast('저장');
+}
+function ucCancelEditor(){
+  if(!ucE) return;
+  for(const x of ucE.ph) if(x.neu) idbDel('uph:'+x.p);
+  ucE=null; $('ovlUc').classList.remove('show');
+}
+function ucDelete(id){
+  const b=UC[id]; if(!b || b.del) return;
+  const pids=(b.ph||[]).map(x=>x.p);
+  UC[id]={del:1, u:new Date(Math.max(Date.now(), (Date.parse(b.u)||0)+1)).toISOString()}; ucSave();
+  if(state.cards[id]){ const s=state.cards[id]; const hadM=muOf(s)||s.retired||s.by||(s.t&&s.t.length)||s.base, hadF=s.flag!=null||(s.ann&&s.ann.length);
+    delete state.cards[id]; if(hadM) markDirty('marks'); if(hadF) markDirty('fb'); }
+  ucInject(); ucPhGc(); ucMarkDirty(); cacheState();
+  for(const sx of sessions){ if(Array.isArray(sx.q) && sx.q.includes(id)){ sx.q=sx.q.filter(x=>x!==id); } } saveSessionsSoon();
+  if(store.linked()) push();
+  ucAfterChange(); toast('카드 지움');
+}
+function ucAfterChange(){
+  const scr=[...document.querySelectorAll('.scr.on')].map(x=>x.id)[0];
+  if(scr==='scrList'){ if(listCond) refreshList(); else renderList(true); } else if(scr==='scrHome') renderHome(); else if(scr==='scrSession') renderSession();
+  if($('ovlCard').classList.contains('show') && csCard){ const n=BYID[csCard.id]; if(n){ csCard=n; renderCardSheet(); } else closeCardSheet(); }
+}
+$('ucType').querySelectorAll('button').forEach(x=>x.onclick=()=>{ ucCollect(); ucE.b.t=x.dataset.v; ucRenderType(); });
+$('ucSubj').onchange=()=>{ ucE.b.s=$('ucSubj').value; ucE.b.k=''; ucE.b.m=''; ucFillSelects(); };
+$('ucUnit').onchange=()=>{ ucE.b.k=$('ucUnit').value; ucE.b.m=''; ucFillSelects(); };
+$('ucMid').onchange=()=>{ ucE.b.m=$('ucMid').value; };
+$('ucOrd').onclick=()=>{     ucE.b.o=ucE.b.o?0:1; if(!ucE.b.o) delete ucE.b.o; ucRenderType(); };
+['ucQ','ucIt'].forEach(k=>$(k).addEventListener('input', ()=>{ if(ucE){ ucRenderPrev(); ucBlankDim(); } }));
+let ucSel=[0,0];
+['select','keyup','mouseup','touchend','input'].forEach(ev=>$('ucQ').addEventListener(ev, ()=>{ const t=$('ucQ'); ucSel=[t.selectionStart, t.selectionEnd]; }));
+function ucBlankDim(){ const t=$('ucQ'); if(!t) return; const on=t.selectionEnd>t.selectionStart || !!(ucSelR && ucSelR.v===t.value && Date.now()-ucSelR.at<8000); $('ucBlank').classList.toggle('dim', !on); }
+let ucSelR=null;
+document.addEventListener('selectionchange', ()=>{ const t=$('ucQ'); if(!ucE || document.activeElement!==t) return; ucSel=[t.selectionStart, t.selectionEnd]; if(t.selectionEnd>t.selectionStart) ucSelR={a:t.selectionStart, z:t.selectionEnd, at:Date.now(), v:t.value}; ucBlankDim(); });
+$('ucBlank').addEventListener('mousedown', e=>e.preventDefault());
+$('ucUnblank').addEventListener('mousedown', e=>e.preventDefault());
+$('ucBlank').onclick=()=>{ const t=$('ucQ'), v=t.value; let [a,z]=(t.selectionStart!==t.selectionEnd) ? [t.selectionStart, t.selectionEnd] : (ucSelR && ucSelR.v===v && Date.now()-ucSelR.at<8000) ? [ucSelR.a, ucSelR.z] : ucSel;
+  while(a<z && /\s/.test(v[a])) a++; while(z>a && /\s/.test(v[z-1])) z--;
+  if(a>=z){ toast('가릴 말을 먼저 고르기'); return; }
+  const inner=v.slice(a,z); if(/\[\[|\]\]/.test(inner)){ toast('빈칸 안에 빈칸 안 됨'); return; }
+  if(ucParseCloze(v).n>=UC_NUM.length){ toast('빈칸은 20개까지'); return; }
+  t.value=v.slice(0,a)+'[['+inner+']]'+v.slice(z); t.focus(); t.setSelectionRange(z+4, z+4); ucSel=[z+4,z+4]; ucRenderPrev(); };
+$('ucUnblank').onclick=()=>{ const t=$('ucQ'), v=t.value, at=t.selectionStart!=null ? t.selectionStart : ucSel[0];
+  const re=/\[\[([\s\S]*?)\]\]/g; let m, hit=null; while((m=re.exec(v))){ if(at>=m.index && at<=m.index+m[0].length){ hit=m; break; } }
+  if(!hit){ toast('빈칸 안에 커서를 두고'); return; }
+  t.value=v.slice(0,hit.index)+hit[1]+v.slice(hit.index+hit[0].length); t.focus(); ucRenderPrev(); };
+$('ucFile').onchange=async()=>{
+  const f=$('ucFile').files && $('ucFile').files[0]; $('ucFile').value=''; if(!f || !ucE) return;
+  const side=ucE.side||'f';
+  if(ucPhCountAll()>=UC_PH_MAX){ toast('사진 한도 — 100장'); return; }
+  ucE.busy=side; ucRenderPh();
+  try{ const r=await ucShrink(f); if(!ucE) return;
+    const pid=ucNewPid(), a=await r.b.arrayBuffer();
+    if(!(await ucPhPutLocal(pid, a, 'image/jpeg', 0))) throw {code:'idb'};
+    ucPhUrlFrom(pid, a, 'image/jpeg');
+    ucE.ph.push({p:pid, on:side, neu:1});
+    console.log('[내 카드] 사진', Math.round(r.src/1024)+'KB →', Math.round(r.b.size/1024)+'KB', r.w+'×'+r.h, 'q', r.q);
+  }catch(e){ toast(e && e.code==='notimg' ? '사진 아님' : e && e.code==='idb' ? '이 기기에 사진을 못 남김' : '사진이 너무 큼'); }
+  finally{ if(ucE){ ucE.busy=null; ucRenderPh(); } }
+};
+$('ucSave').onclick=ucSaveEditor;
+$('ucNew').onclick=()=>openUcEditor(null);
+$('hsMine').onclick=()=>{ go('scrList'); listCond='mine'; renderList(true); };
+$('ucCancel').onclick=ucCancelEditor;
+$('ucDel').onclick=()=>{ const id=ucE && ucE.id; if(!id) return;
+  askConfirm('카드 지우기', '이 카드와 사진을 지웁니다. 되돌릴 수 없습니다.', '지우기', ()=>{ for(const x of ucE.ph) if(x.neu) idbDel('uph:'+x.p); ucE=null; $('ovlUc').classList.remove('show'); ucDelete(id); }); };
+$('ovlUc').onclick=(e)=>{ if(e.target===$('ovlUc')) ucCancelEditor(); };
+
 (async function(){
   applyTheme();
   const rd=await storeInit(); loadSessions(); loadIntake(); loadRest(); loadIv();
   await loadData();
-  if(!DATA.length){
+  if(!DECK.length){
     { const s=document.querySelector('#loading .ld-s'); if(s) s.textContent='카드 데이터를 못 불러옴 — 네트워크 확인 후 새로고침'; else $('loading').textContent='카드 데이터를 못 불러옴 — 네트워크 확인 후 새로고침'; }
     return;
   }
@@ -10627,6 +11199,7 @@ function toast(m){ const t=$('toast'); t.textContent=m; t.classList.toggle('hi',
   go('scrHome');
   try{ tryResume(); }catch(e){ console.warn('[복귀] 실패 — 홈으로', e); }
   checkNewVersion();
+  setTimeout(()=>{ ucPhPrefetch(); ucPhSweep(); }, 15000);
   loadIndexes();
 })();
 
@@ -10636,10 +11209,10 @@ function imgsOf(c, side){
   const a=c&&c.img; if(!Array.isArray(a)) return [];
   return a.filter(x=>x&&x.p&&((x.on||'f')===side));
 }
-function imgSrc(p){ return String(p||'').replace(/^\/+/,''); }
+function imgSrc(p){ const pid=ucPidOf(p); if(pid){ const u=UPH_URL.get(pid); if(!u) ucPhEnsure(pid); return u||UPH_BLANK; } return String(p||'').replace(/^\/+/,''); }
 function csImgs(c, side){
   const list=imgsOf(c, side); if(!list.length) return '';
-  return '<div class="cs-imgs">'+list.map(it=>'<img src="'+esc(imgSrc(it.p))+'" alt="'+esc(it.alt||'')+'" loading="lazy" decoding="async" '
+  return '<div class="cs-imgs">'+list.map(it=>'<img'+(ucPidOf(it.p)?' data-uph="'+ucPidOf(it.p)+'"':'')+' src="'+esc(imgSrc(it.p))+'" alt="'+esc(it.alt||'')+'" loading="lazy" decoding="async" '
     +'onclick="event.stopPropagation();openImg(this.src,this.alt)" '
     +'onerror="this.style.display=&quot;none&quot;;this.insertAdjacentHTML(&quot;afterend&quot;,&quot;<div class=\&quot;c-alt\&quot;>'+esc((it.alt?it.alt+' — ':'')+'그림을 못 받음')+'</div>&quot;)">').join('')+'</div>';
 }
@@ -10649,7 +11222,7 @@ function renderImgs(el, c, side){
   el.innerHTML='';
   for(const it of list){
     const im=document.createElement('img');
-    im.className='c-img'; im.src=imgSrc(it.p); im.alt=it.alt||'';
+    im.className='c-img'; { const pid=ucPidOf(it.p); if(pid) im.dataset.uph=pid; } im.src=imgSrc(it.p); im.alt=it.alt||'';
     im.loading='lazy'; im.decoding='async';
     im.onclick=(ev)=>{ ev.stopPropagation(); openImg(im.src, it.alt||''); };
     im.onerror=()=>{ im.classList.add('err');
